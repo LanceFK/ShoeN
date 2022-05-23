@@ -1,3 +1,4 @@
+from logging import PlaceHolder
 from django import forms
 from .models import Post, Category
 

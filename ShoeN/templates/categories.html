@@ -8,21 +8,24 @@
 
     <ul>
     {% for post in category_posts %}
-            <li><a href="{% url 'article-detail' post.pk %}">
-                {{ post.title }}</a>
-                - {{ post.author }} - {{ post.post_date }} 
-                <small>
-                {% if user.is_authenticated %}
-                    <a href="{% url 'update_post' post.pk %}">(Edit)</a>
-                    <a href="{% url 'delete_post' post.pk %}">(Delete)</a>
-                {% endif %}
-                </small><br/>
-                {{ post.body|slice:":100"|safe }}
-            </li>
+    <li><a href="{% url 'article-detail' post.pk %}">
+        {{ post.title }}</a>
+        <!-- - <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a> -->
+        - {{ post.shoe_in }} - {{ post.category }} 
+        <!-- <small> -->
+        <!-- {% if user.is_authenticated %}
+            {% if user.id == post.author.id %}
+                <a href="{% url 'update_post' post.pk %}">(Edit)</a>
+                <a href="{% url 'delete_post' post.pk %}">(Delete)</a>
+            {% endif %} -->
+        <!-- {% endif %} -->
+        <!-- </small><br/> -->
+        <!-- {{ post.body|slice:":100"|safe }} -->
+    </li>
     {% endfor %}
     </ul>
 {% else %}
-    <h2>Sorry this page does not exist!</h2>
+    <h2>Shoe Is Not In!</h2>
 {% endif %}
 
 {% endblock %}

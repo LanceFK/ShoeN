@@ -4,7 +4,7 @@
 
 
 {% if user.is_authenticated %}
-    <h1>Add Category</h1>
+    <h1>Add Brand</h1>
 
     <br>
     <br>
@@ -12,7 +12,9 @@
         <form  method="POST">
             {% csrf_token %}
             {{ form.as_p }}
-            <button class="btn btn-secondary">Category</button>
+            <button class="btn btn-secondary">Add
+                
+            </button>
         </form>
     </div>
 
