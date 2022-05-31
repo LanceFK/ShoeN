@@ -1,31 +1,32 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
+<div class='text-center'>
+    <img src="{% static '\logo\image\logo1.jpg' %}" class="rounded mx-auto d-block">
+</div>
 
+<h1>{{ cats }} Categories</h1>
 
-{% if category_posts %}
-    <h1>{{ cats }}</h1>
-
-    <ul>
-    {% for post in category_posts %}
+<ul>
+{% for post in category_posts %}   
     <li><a href="{% url 'article-detail' post.pk %}">
         {{ post.title }}</a>
         <!-- - <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a> -->
-        - {{ post.shoe_in }} - {{ post.category }} 
-        <!-- <small> -->
-        <!-- {% if user.is_authenticated %}
+        - {{ post.author }} - {{ post.post_date }} 
+        <small>
+        {% if user.is_authenticated %}
             {% if user.id == post.author.id %}
                 <a href="{% url 'update_post' post.pk %}">(Edit)</a>
                 <a href="{% url 'delete_post' post.pk %}">(Delete)</a>
-            {% endif %} -->
-        <!-- {% endif %} -->
-        <!-- </small><br/> -->
-        <!-- {{ post.body|slice:":100"|safe }} -->
+            {% endif %}
+        {% endif %}
+        </small><br/>
+        {{ post.body|slice:":100"|safe }}
     </li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <h2>Shoe Is Not In!</h2>
-{% endif %}
+{% endfor %}
+
+
+</ul>
 
 {% endblock %}

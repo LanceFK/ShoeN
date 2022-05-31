@@ -10,9 +10,9 @@ urlpatterns = [
     path('add_category/', AddCategoryView.as_view(), name='add_category'),
     path('article/edit/<int:pk>', UpdatePostView.as_view(), name='update_post'),
     path('article/edit/<int:pk>/remove', DeletePostView.as_view(), name='delete_post'),
-    path('category/<str:cats>/', CategoryView, name='category'),
     path('like/<int:pk>', LikeView, name='like_post'),
     path('category-list', CategoryListView, name='category-list'),
+    path('category/<str:cats>/', CategoryView, name='category'),
 
 
 ]
