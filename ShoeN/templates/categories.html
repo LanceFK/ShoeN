@@ -6,27 +6,19 @@
     <img src="{% static '\logo\image\logo1.jpg' %}" class="rounded mx-auto d-block">
 </div>
 
-<h1>{{ cats }} Categories</h1>
+
 
 <ul>
-{% for post in category_posts %}   
-    <li><a href="{% url 'article-detail' post.pk %}">
-        {{ post.title }}</a>
-        <!-- - <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a> -->
-        - {{ post.author }} - {{ post.post_date }} 
-        <small>
-        {% if user.is_authenticated %}
-            {% if user.id == post.author.id %}
-                <a href="{% url 'update_post' post.pk %}">(Edit)</a>
-                <a href="{% url 'delete_post' post.pk %}">(Delete)</a>
-            {% endif %}
-        {% endif %}
-        </small><br/>
-        {{ post.body|slice:":100"|safe }}
-    </li>
-{% endfor %}
-
-
-</ul>
-
+    <h1> My Collection</h1> 
+    {% for post in object_list %} 
+        <li><a href="{% url 'article-detail' post.pk %}">
+            {{ post.shoe_in }}</a>
+            - {{ post.category }}</a>
+            - {{ post.colaboration }} - {{ post.color_scheme_1 }} - {{ post.color_scheme_2 }} - {{ post.color_scheme_3 }}
+            <small>
+            </small><br/>
+        </li>
+    {% endfor %}
+    </ul>
+    
 {% endblock %}

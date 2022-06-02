@@ -12,7 +12,7 @@ urlpatterns = [
     path('article/edit/<int:pk>/remove', DeletePostView.as_view(), name='delete_post'),
     path('like/<int:pk>', LikeView, name='like_post'),
     path('category-list', CategoryListView, name='category-list'),
-    path('category/<str:cats>/', CategoryView, name='category'),
+    path('category/<str:cats>/', CategoryView.as_view(), name='category'),
 
 
 ]

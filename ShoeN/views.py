@@ -1,3 +1,4 @@
+from unicodedata import category
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView  # ListView will list posts, DetailView will show 1 post
 from .models import Post, Category
@@ -37,9 +38,18 @@ def CategoryListView(request):
     cat_menu_list = Category.objects.all()
     return render(request, 'category_list.html', {'cat_menu_list': cat_menu_list})
 
-def CategoryView(request, cats):
-    category_posts = Post.objects.filter(category = cats)
-    return render(request, 'categories.html', {'cats': cats, 'category_posts': category_posts})
+
+# Categories file will show selected Brand only.
+class CategoryView(ListView):   
+        model = Post
+        template_name = 'categories.html'
+        cats = Post.objects.filter()
+        ordering = ['-post_date']
+
+
+# def CategoryView(request, cats):
+#     category_posts = Post.objects.filter()
+#     return render(request, 'categories.html', {'cats': cats, 'category_posts':category_posts})
 
 class ArticleDetailView(DetailView):
     model = Post

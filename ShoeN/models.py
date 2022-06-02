@@ -21,7 +21,7 @@ class Post(models.Model):
     body = RichTextField(blank=True, null=True)
     # body = models.TextField()
     post_date = models.DateField(auto_now_add=True)
-    category = models.CharField(max_length=255, default='nike')
+    category = models.CharField(max_length=255, default='shoe_in')
     shoe_in = models.CharField(max_length=255)
     colaboration = models.CharField(max_length=255)
     color_scheme_1 = models.CharField(max_length=255)
