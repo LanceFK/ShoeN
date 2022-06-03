@@ -40,7 +40,7 @@ def CategoryListView(request):
 
 
 # Categories file will show selected Brand only.
-class CategoryView(ListView):   
+class CategoryView( ListView):   
         model = Post
         template_name = 'categories.html'
         cats = Post.objects.filter()

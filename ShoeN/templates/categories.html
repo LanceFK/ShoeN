@@ -8,16 +8,18 @@
 
 
 
-<ul>
-    <h1> My Collection</h1> 
+    <ul>
+    <h1>{{ user }}'s Collection</h1> 
     {% for post in object_list %} 
-        <li><a href="{% url 'article-detail' post.pk %}">
-            {{ post.shoe_in }}</a>
-            - {{ post.category }}</a>
-            - {{ post.colaboration }} - {{ post.color_scheme_1 }} - {{ post.color_scheme_2 }} - {{ post.color_scheme_3 }}
-            <small>
-            </small><br/>
-        </li>
+        <div>
+            <li>Model: <a href="{% url 'article-detail' post.pk %}">
+                    {{ post.shoe_in }}</a>
+                    Brand:  {{ post.category }}</a>
+                    - Colaboration. {{ post.colaboration }}<br> 
+                    Colors: {{ post.color_scheme_1 }} - {{ post.color_scheme_2 }} - {{ post.color_scheme_3 }}
+                    <br/>
+            </li>
+        </div>
     {% endfor %}
     </ul>
     

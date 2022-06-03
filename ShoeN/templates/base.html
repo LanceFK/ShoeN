@@ -36,7 +36,7 @@
                 {% else %}
                   category-list
                     <li class="nav-item">
-                      <a class="nav-link" href="{% url 'category-list' %}">Categories</a>
+                      <a class="nav-link" href="{% url 'category-list' %}">Collection</a>
                     </li>
 
               {% endif %}
@@ -47,6 +47,9 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'add_category' %}">Add Brand</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'edit_profile' %}">Edit Profile</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'logout' %}">Logout</a>
