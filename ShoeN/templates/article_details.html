@@ -18,7 +18,7 @@
     <br>
 
     {% if post.shoe_image %}
-        <img src="{{ post.shoe_image.url }}" class="img-thumbnail">
+        <img src="{{ post.shoe_image.url }}" class="img-thumbnail" width=400 height=400>
     {% endif %}
 
     <br><br>
@@ -34,18 +34,21 @@
     <form action="{% url 'like_post' post.pk %}" method="POST">
         {% csrf_token %}
 
-    {% if user.is_authenticated %}
-        {% if liked %}
-            <button type='submit', name='post_id', value="{{ post.id }}", class="btn btn-danger btn-sm">UnNod!</button> 
+        {% if user.is_authenticated %}
+            {% if liked %}
+                <button type='submit', name='post_id', value="{{ post.id }}", class="btn btn-danger btn-sm">UnNod!</button> 
+            {% else %}
+                <button type='submit', name='post_id', value="{{ post.id }}", class="btn btn-primary btn-sm">Nod!</button> 
+            
+            {% endif %}
         {% else %}
-            <button type='submit', name='post_id', value="{{ post.id }}", class="btn btn-primary btn-sm">Nod!</button> 
-        
+            <small>Login to Nod!</small>
         {% endif %}
-    {% else %}
-        <small>Login to Nod!</small>
-    {% endif %}
-        - {{ total_likes}} Nods
+            - {{ total_likes}} Nods
     </form>
+
+<br><br/>
+<img src=" {{ post.author.profile.profile_pic.url }} " width=200 height=200>
 
 
 {% endblock %}
