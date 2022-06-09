@@ -21,7 +21,7 @@ class Profile(models.Model):
     website_url = models.CharField(max_length=255, null=True, blank=True)
     instagram_url = models.CharField(max_length=255, null=True, blank=True)
     twitter_url = models.CharField(max_length=255, null=True, blank=True)
-    facebook_url = models.CharField(max_length=255, null=True, blank=True)
+    meta_url = models.CharField(max_length=255, null=True, blank=True)
     pinterest_url = models.CharField(max_length=255, null=True, blank=True)
 
 
@@ -37,7 +37,7 @@ class Post(models.Model):
     body = RichTextField(blank=True, null=True)
     # body = models.TextField()
     post_date = models.DateField(auto_now_add=True)
-    category = models.CharField(max_length=255, default='shoe_in')
+    category = models.CharField(max_length=255, default='select_shoe')
     shoe_in = models.CharField(max_length=255)
     colaboration = models.CharField(max_length=255)
     color_scheme_1 = models.CharField(max_length=255)

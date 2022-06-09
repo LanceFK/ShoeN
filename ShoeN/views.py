@@ -39,7 +39,7 @@ def CategoryListView(request):
     return render(request, 'category_list.html', {'cat_menu_list': cat_menu_list})
 
 
-# Categories file will show selected Brand only.
+# Categories (User shoe collection displayed here).
 class CategoryView( ListView):   
         model = Post
         template_name = 'categories.html'
