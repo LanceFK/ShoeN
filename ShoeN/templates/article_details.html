@@ -3,9 +3,11 @@
 
 {% block content %}
 
+    
+    <img src=" {{ post.author.profile.profile_pic.url }} " class="rounded-circle" width=150 height=150>
+    <br><br/>
 
-    <h1>{{ post.title }}</h1>
-    <small>
+    <!-- <small>
         By: {{ post.author }} - {{ post.post_date }} 
         {% if user.is_authenticated %}
             {% if user.id == post.author.id %}
@@ -13,42 +15,52 @@
                 <a href="{% url 'delete_post' post.pk %}">(Delete)</a>
             {% endif %}
         {% endif %}
-    </small><br>
-    <br>
-    <br>
+    </small><br> -->
 
-    {% if post.shoe_image %}
-        <img src="{{ post.shoe_image.url }}" class="img-thumbnail" width=400 height=400>
-    {% endif %}
-
-    <br><br>
-    {{ post.body|safe }}
-
-    <br><br>
-    <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
-
-
-    <br><br>
+    <div class="card mb-3" style="max-width: 800px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+            {% if post.shoe_image %}
+                <img src="{{ post.shoe_image.url }}" class="img-thumbnail" alt="...">
+            {% endif %}
+            </div>
+            <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="card-text">{{ post.body|safe }}</p>
+                <p class="card-text"><small class="text-muted">By: {{ post.author }} - {{ post.post_date }}</small></p>
+            </div>
+            </div>
+        </div>
+    </div>
+    <small>
+        {% if user.is_authenticated %}
+            {% if user.id == post.author.id %}
+                <a href="{% url 'update_post' post.pk %}">(Edit)</a>
+                <a href="{% url 'delete_post' post.pk %}">(Delete)</a>
+            {% endif %}
+        {% endif %}
+    </small>
     <br>
     <br>
     <form action="{% url 'like_post' post.pk %}" method="POST">
         {% csrf_token %}
-
         {% if user.is_authenticated %}
             {% if liked %}
                 <button type='submit', name='post_id', value="{{ post.id }}", class="btn btn-danger btn-sm">UnNod!</button> 
             {% else %}
                 <button type='submit', name='post_id', value="{{ post.id }}", class="btn btn-primary btn-sm">Nod!</button> 
-            
             {% endif %}
         {% else %}
             <small>Login to Nod!</small>
         {% endif %}
             - {{ total_likes}} Nods
     </form>
+    <br>
+    <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+    <br>
+    <br>
 
-<br><br/>
-<img src=" {{ post.author.profile.profile_pic.url }} " width=200 height=200>
 
 
 {% endblock %}
