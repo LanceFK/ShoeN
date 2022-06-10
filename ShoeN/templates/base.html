@@ -21,25 +21,26 @@
             <ul class="navbar-nav mr-auto">
 
               <!-- Category Menu -->
+            {% if user.is_authenticated %}
               {% if cat_menu %}
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Catagories
                   </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown"> 
 
                       {% for item in cat_menu %}
                       <a class="dropdown-item" href="{% url 'category' item|slugify %}">{{ item }}</a>
                       {% endfor %}
                   </ul>
                 </li>
-                {% else %}
+              {% else %}
                   category-list
                     <li class="nav-item">
                       <a class="nav-link" href="{% url 'category-list' %}">Collection</a>
                     </li>
-
               {% endif %}
+            {% endif %}
 
               {% if user.is_authenticated %}
                 <li class="nav-item">
@@ -55,16 +56,15 @@
                   <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                 </li>
               {% else %}
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'register' %}">Register</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'login' %}">Login</a>
-              </li>
-
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'register' %}">Register</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
               {% endif %}
-
             </ul>
+            
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>

@@ -33,12 +33,12 @@ class EditProfileForm(UserChangeForm):
     last_login = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
     # is_superuser = forms.CharField(max_length=100, widget=forms.CheckboxInput(attrs={'class': 'form-check'}))
     # is_staff = forms.CharField(max_length=100, widget=forms.CheckboxInput(attrs={'class': 'form-check'}))
-    is_active = forms.CharField(max_length=100, widget=forms.CheckboxInput(attrs={'class': 'form-check'}))
+    # is_active = forms.CharField(max_length=100, widget=forms.CheckboxInput(attrs={'class': 'form-check'}))
     date_joined = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'first_name', 'last_name', 'instagram_url', 'meta_url', 'twitter_url', 'pinterest_url', 'website_url', 'password', 'is_active', 'last_login', 'date_joined')
+        fields = ('username', 'email', 'first_name', 'last_name', 'instagram_url', 'meta_url', 'twitter_url', 'pinterest_url', 'website_url', 'password', 'last_login', 'date_joined')
 
 
 class PasswordChangingForm(PasswordChangeForm):

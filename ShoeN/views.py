@@ -40,10 +40,10 @@ def CategoryListView(request):
 
 
 # Categories (User shoe collection displayed here).
-class CategoryView( ListView):   
+class CategoryView(ListView):   
         model = Post
         template_name = 'categories.html'
-        cats = Post.objects.filter()
+        cats = Post.objects.all()
         ordering = ['-post_date']
 
 

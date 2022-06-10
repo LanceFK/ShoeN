@@ -6,21 +6,25 @@
     <img src="{% static '\logo\image\logo1.jpg' %}" class="rounded mx-auto d-block">
 </div>
 
-
+<!-- # User shoe Collection stored here -->
 
     <ul>
     <h1>{{ user }}'s Collection</h1> 
-    {% for post in object_list %} 
-        <div>
-            <li>Model: <a href="{% url 'article-detail' post.pk %}">
-                    {{ post.shoe_in }}</a>
-                    Brand:  {{ post.category }}</a>
-                    - Colaboration. {{ post.colaboration }}<br> 
-                    Colors: {{ post.color_scheme_1 }} - {{ post.color_scheme_2 }} - {{ post.color_scheme_3 }}
-                    <br/>
-            </li>
-        </div>
-    {% endfor %}
+
+            <div>
+                {% for post in object_list %} 
+                    <li>Model: <a href="{% url 'article-detail' post.pk %}">{{ post.shoe_in }}</a>
+                            <a>{{ post.category }}
+                            - Colaboration. {{ post.colaboration }}<br> 
+                            Colors: {{ post.color_scheme_1 }} , {{ post.color_scheme_2 }} , {{ post.color_scheme_3 }}</a>
+                            <br/>
+                    </li>
+                {% endfor %}
+            </div>
+
     </ul>
+    <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+    <br>
+    <br>
     
 {% endblock %}
