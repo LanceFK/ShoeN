@@ -2,10 +2,18 @@ from django.shortcuts import render
 from django.views import generic
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.contrib.auth.views import PasswordChangeView
-from django.urls import reverse_lazy     # Reverse lazy will redirect back
+from django.urls import reverse_lazy  # Reverse lazy will redirect back
 from .forms import SignUpForm, EditProfileForm, PasswordChangingForm
+from ShoeN.models import Profile 
 
 # Create your views here.
+
+class EditProfilePageView(generic.UpdateView):
+    model = Profile
+    template_name = 'registration/edit_profile_page.html'
+    # fields = ['bio', 'profile_pic', 'website_url', 'instagram_url', 'twitter_url', 'meta_url', 'pinterest_url' ]
+    # success_url = reverse_lazy('home')
+
 
 class PasswordsChangeView(PasswordChangeView):
     form_class = PasswordChangingForm

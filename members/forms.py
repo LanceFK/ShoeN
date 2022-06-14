@@ -25,11 +25,6 @@ class EditProfileForm(UserChangeForm):
     username = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
     first_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
     last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    meta_url = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    website_url = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))    
-    instagram_url = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))    
-    twitter_url = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))    
-    pinterest_url = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))        
     last_login = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
     # is_superuser = forms.CharField(max_length=100, widget=forms.CheckboxInput(attrs={'class': 'form-check'}))
     # is_staff = forms.CharField(max_length=100, widget=forms.CheckboxInput(attrs={'class': 'form-check'}))
@@ -38,7 +33,7 @@ class EditProfileForm(UserChangeForm):
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'first_name', 'last_name', 'instagram_url', 'meta_url', 'twitter_url', 'pinterest_url', 'website_url', 'password', 'last_login', 'date_joined')
+        fields = ('username', 'email', 'first_name', 'last_name', 'password', 'last_login', 'date_joined')
 
 
 class PasswordChangingForm(PasswordChangeForm):
