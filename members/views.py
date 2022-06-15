@@ -11,9 +11,8 @@ from ShoeN.models import Profile
 class EditProfilePageView(generic.UpdateView):
     model = Profile
     template_name = 'registration/edit_profile_page.html'
-    # fields = ['bio', 'profile_pic', 'website_url', 'instagram_url', 'twitter_url', 'meta_url', 'pinterest_url' ]
-    # success_url = reverse_lazy('home')
-
+    fields = ['bio'] #'profile_pic', 'website_url', 'instagram_url', 'twitter_url', 'meta_url', 'pinterest_url' 
+    success_url = reverse_lazy('home')
 
 class PasswordsChangeView(PasswordChangeView):
     form_class = PasswordChangingForm
