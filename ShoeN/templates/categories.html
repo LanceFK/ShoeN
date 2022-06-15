@@ -10,8 +10,24 @@
 
     <ul>
     <h1>{{ user }}'s Collection</h1> 
+    
+        <div class="card" style="width: 18rem;">
+            {% for post in object_list %} 
+                <img src="{{ post.shoe_image.url }}" class="card-img-top">
+                <div class="card-body">
+                    <p class="card-text">
+                        Model: <a href="{% url 'article-detail' post.pk %}">{{ post.shoe_in }}</a>
+                        <a>{{ post.category }} {{ post.author }}
+                        - Colaboration. {{ post.colaboration }}<br> 
+                        Colors: {{ post.color_scheme_1 }} , {{ post.color_scheme_2 }} , {{ post.color_scheme_3 }}</a>
+                        <br/>
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+            
 
-            <div>
+            <!-- <div>
                 {% for post in object_list %} 
                     <li>Model: <a href="{% url 'article-detail' post.pk %}">{{ post.shoe_in }}</a>
                             <a>{{ post.category }}
@@ -20,7 +36,7 @@
                             <br/>
                     </li>
                 {% endfor %}
-            </div>
+            </div> -->
 
     </ul>
     <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
