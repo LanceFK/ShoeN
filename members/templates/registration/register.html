@@ -2,12 +2,15 @@
 {% block title %}Register{% endblock %}
 
 {% block content %}
+{% load static %}
 
 
+<div class='text-center'>
+    <img src="{% static '\logo\image\logo1.jpg' %}" class="rounded mx-auto d-block">
+</div>
 
-<h1>Register</h1>
+<h1>Shoe'N RegisterY</h1>
 
-<br>
 <br>
 <div class="form-group">
     <form  method="POST">
@@ -16,5 +19,6 @@
         <button class="btn btn-secondary">Register</button>
     </form>
 </div>
+<br><br>
 
 {% endblock %}

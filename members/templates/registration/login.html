@@ -2,19 +2,33 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
+{% load static %}
 
 
-
-<h1>Login</h1>
+<div class='text-center'>
+    <img src="{% static '\logo\image\logo1.jpg' %}" class="rounded mx-auto d-block">
+</div>
+<h1>Shoe'N LogiN</h1>
 
 <br>
 <br>
 <div class="form-group">
     <form  method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
+            <div class="form-group mb-3">
+                <input type="text" class="form-control" name="username" placeholder="Username">
+                <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+            </div>
+
+            <div class="form-group mb-3">
+                <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <br>
         <button class="btn btn-secondary">Login</button>
+        <br><br>
+        <div id="emailHelp" class="form-text">
+            Haven't Yet? Register <a href="{% url 'register' %}">Here!</a>
+        </div>
     </form>
 </div>
-
 {% endblock %}
