@@ -1,28 +1,31 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
 
-{% if user.is_authenticated %}
-    <!-- {% if user.id == profile.user.id %} -->
-        <h1>Update Profile</h1>
+    {% if user.is_authenticated %}
+        {% if user.id == profile.user.id %}
+            <h1>Update Profile</h1>
 
-        <br>
-        <br>
-        <div class="form-group">
-            <form  method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ form.as_p }}  
-                <button class="btn btn-secondary">Update Profile</button>
-            </form>
-        </div>
+            <br>
+            <br>
+            <div class="form-group">
+                <form  method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}  
+                    <button class="btn btn-secondary">Update Profile</button>
+                </form>
+            </div>
 
-        <br>
-        <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+            <br>
+            <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
 
-{% else %}
-    Please Login to Shoe'N!
-{% endif %}
+    {% else %}
+        Please Login to Shoe'N!
+    {% endif %}
 
+        {% else %}
+        This Isn't Your Profile!
+        {% endif %}
 
 {% endblock %}

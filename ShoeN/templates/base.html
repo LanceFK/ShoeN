@@ -57,8 +57,14 @@
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <li><a class="dropdown-item" href="{% url 'edit_profile' %}">Update Settings</a></li>
-                    <li><a class="dropdown-item" href="#">Update Profile</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+
+                    {% if user.profile.id %}
+                    <li><a class="dropdown-item" href="{% url 'edit_profile_page' user.profile.id %}">Update Profile</a></li>
+                    <li><a class="dropdown-item" href="{% url 'show_profile_page' user.profile.id %}">{{ user }}'s Collection</a></li>
+                    {% else %}
+                    <a class="dropdown-item" href="{% url 'create_profile_page' %}">Create Profile Page</a>                    
+                    {% endif %}
+
                   </ul>
                 </li>
 
