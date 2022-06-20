@@ -5,22 +5,33 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm, Password
 from django.contrib.auth.views import PasswordChangeView
 from django.urls import reverse_lazy  # Reverse lazy will redirect back
 from .forms import ProfilePageForm, SignUpForm, EditProfileForm, PasswordChangingForm, ProfilePageForm
-from ShoeN.models import Profile 
+from ShoeN.models import Profile, Post 
 
 # Create your views here.
 
 class ShowProfilePageView(DetailView):
     model = Profile
     template_name = 'registration/user_profile.html'
+    ordering = ['-post_date']
 
     def get_context_data(self, *args, **kwargs):
-        users = Profile.objects.all()
+        page_user = Post.objects.all()
         context = super(ShowProfilePageView, self).get_context_data(*args, **kwargs)
-
         page_user = get_object_or_404(Profile, id=self.kwargs['pk'])
-
         context['page_user'] = page_user
         return context
+
+# def show_profile_page(request):
+#     cat_menu_list = Post.objects.all()
+#     return render(request, 'registration/user_profile.html', {'cat_menu_list': cat_menu_list})
+
+
+
+    # def show_profile_page(request):
+    #     event_list = Post.objects.all()
+    #     return render(request, 'registration/user_profile.html', 
+    #     {'event_list': event_list})
+
 
 
 class CreateProfilePageView(CreateView):

@@ -14,5 +14,4 @@ urlpatterns = [
     path('category-list', CategoryListView, name='category-list'),
     path('category/<str:cats>/', CategoryView.as_view(), name='category'),
 
-
 ]
