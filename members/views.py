@@ -19,9 +19,7 @@ class ShowProfilePageView(ListView):
     def get_context_data(self, *args, **kwargs):
         page_user = Post.objects.all()
         context = super(ShowProfilePageView, self).get_context_data(*args, **kwargs)
-
         # page_user = get_object_or_404(Post, id=self.kwargs['pk'])
-
         context['page_user'] = page_user
         return context
 
@@ -29,14 +27,10 @@ class ShowProfilePageView(ListView):
 #     cat_menu_list = Post.objects.all()
 #     return render(request, 'registration/user_profile.html', {'cat_menu_list': cat_menu_list})
 
-
-
     # def show_profile_page(request):
     #     event_list = Post.objects.all()
     #     return render(request, 'registration/user_profile.html', 
     #     {'event_list': event_list})
-
-
 
 class CreateProfilePageView(CreateView):
     model = Profile
