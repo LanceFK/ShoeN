@@ -4,7 +4,7 @@
 
 
 {% if user.is_authenticated %}
-    <h1>Add Shoe</h1>
+    <h1>Add Your Shoe In</h1>
 
     <br>
     <br>
@@ -19,7 +19,6 @@
 
     <br>
     <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
-
 
     <script>
         var name = '{{ user.id }}';

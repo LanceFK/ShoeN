@@ -20,9 +20,9 @@
                 </div>
                 <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title"><a href="{% url 'article-detail' post.pk %}">
-                        {{ post.title }}</a></h5>
-                    <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a>
+                    <h5 class="card-title"><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a></h5>
+                    <!-- <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a> -->
+                    <a>{{ post.category }}</a>
 
                     <!-- <p class="small text-muted">
                         {% if post.author.profile.website_url %}
@@ -54,6 +54,21 @@
                         {% endif %}
                     {% endif %}
                     </small></p>
+
+                    <!-- <form action="{% url 'like_post' post.pk %}" method="POST">
+                        {% csrf_token %}
+                        {% if user.is_authenticated %}
+                            {% if liked %}
+                                <button type='submit', name='post_id', value="{{ post.id }}", class="btn btn-danger btn-sm">UnNod!</button> 
+                            {% else %}
+                                <button type='submit', name='post_id', value="{{ post.id }}", class="btn btn-primary btn-sm">Nod!</button> 
+                            {% endif %}
+                        {% else %}
+                            <small>Login to Nod!</small>
+                        {% endif %}
+                            - {{ total_likes}} Nods
+                    </form> -->
+            
                 </div>
                 </div>
             </div>

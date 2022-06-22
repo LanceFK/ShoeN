@@ -4,15 +4,34 @@
 {% block content %}
 
 
-
-
-
 <h1>{{ user }}'s Collection</h1>
+<br>
+
+<!-- {% if page_user.id == post.id %} -->
+    <!-- {% for page_user in object_list %}  -->
+    
+        <!-- {{ page_user }}  -->
+    
+    <!-- {% endfor %} -->
+<!-- {% endif %} -->
 
 
-{{ page_user }} 
-
-{{ cat_menu_list }}
+<div class="card" style="width: 18rem;">
+    {% for post in object_list %} 
+        <img src="{{ post.shoe_image.url }}" class="card-img-top">
+        <div class="card-body">
+            <p class="card-text">
+                {{ post.category }}
+                <br>
+                Model:<a href="{% url 'article-detail' post.pk %}"> {{ post.shoe_in }}</a>
+                <a>-{{ post.author }}-  Colaboration: {{ post.colaboration }}
+                <br> 
+                Colors: {{ post.color_scheme_1 }}, {{ post.color_scheme_2 }}, {{ post.color_scheme_3 }}</a>
+                <br/>
+            </p>
+        </div>
+    {% endfor %}
+</div>
 
 
 
