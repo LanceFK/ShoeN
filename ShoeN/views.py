@@ -10,6 +10,9 @@ from django.http import HttpResponseRedirect
 # def home(request):
 #     return render(request, 'home.html', {})
 
+def index(request):
+    return render(request, 'hangman.html')
+
 def LikeView(request, pk):
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
     liked = False
@@ -94,3 +97,5 @@ class DeletePostView(DeleteView):
     model = Post
     template_name = 'delete_post.html'
     success_url = reverse_lazy('home')
+
+
