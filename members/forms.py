@@ -16,6 +16,10 @@ class ProfilePageForm(forms.ModelForm):
             'twitter_url': forms.TextInput(attrs={'class': 'form-control'}),
             'meta_url': forms.TextInput(attrs={'class': 'form-control'}),
             'pinterest_url': forms.TextInput(attrs={'class': 'form-control'}),
+            # 'soundcloud_url': forms.TextInput(attrs={'class': 'form-control'}),
+            # 'snapchat_ur': forms.TextInput(attrs={'class': 'form-control'}),
+            # 'pinterest_url': forms.TextInput(attrs={'class': 'form-control'}),
+
 
     }
 

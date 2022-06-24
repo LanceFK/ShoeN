@@ -4,13 +4,10 @@
 {% block content %}
 
     {% if post.author.profile.profile_pic %}
-        <div class="hstack gap-3">
-            <div>
+            <div class="container" name="article_bio">
                 <img src=" {{ post.author.profile.profile_pic.url }} " class="rounded-circle" width=150 height=150>
-                <p>{{ post.author.profile.bio }}</p>
-            </div>
-            
-        </div>
+                <div><p class="text-sm-start">{{ post.author.profile.bio }}</p></div>
+            </div>            
             <br><br/>
     {% else %}
         <img src=" {% static 'shoen\images\default_profile_pic.jpg' %} " class="rounded-circle" width=150 height=150>
@@ -38,27 +35,38 @@
             <div class="card-body">
                 <h5 class="card-title">{{ post.title }}</h5>
                 <p class="small text-muted">
-
-                    <a href="{% url 'show_profile_page' post.author.profile.id %}">Collection</a>
+                    <a href="{% url 'show_profile_page' post.author.profile.id %}" class="fa fa-collection">Shoe'N</a>
 
                     {% if post.author.profile.website_url %}
-                        | <a href="{{ post.author.profile.website_url  }}">Website</a>
+                        | <a href="{{ post.author.profile.website_url  }} " class="fa fa-linkedin"></a>
                     {% endif %}
 
                     {% if post.author.profile.instagram_url %}
-                        | <a href="{{ post.author.profile.instagram_url }}">Instagram</a>
+                        | <a href="{{ post.author.profile.instagram_url }}" class="fa fa-instagram"></a>
                     {% endif %}
 
                     {% if post.author.profile.meta_url %}
-                        | <a href="{{ post.author.profile.meta_url  }}">Meta </a>
+                        | <a href="{{ post.author.profile.meta_url  }}" class="fa fa-facebook"> </a>
                     {% endif %}
 
                     {% if post.author.profile.twitter_url %}
-                        | <a href="{{ post.author.profile.twitter_url }}">Twitter</a>
+                        | <a href="{{ post.author.profile.twitter_url }}" class="fa fa-twitter"></a>
                     {% endif %}
 
                     {% if post.author.profile.pinterest_url %}
-                        | <a href="{{ post.author.profile.pinterest_url  }}">Pinterest</a>
+                        | <a href="{{ post.author.profile.pinterest_url  }}"class="fa fa-pinterest"></a>
+                    {% endif %}
+
+                    {% if post.author.profile.soundcloud_url %}
+                    | <a href="{{ post.author.profile.soundcloud_url  }}"class="fa fa-soundcloud"></a>
+                    {% endif %}
+
+                    {% if post.author.profile.snapchat_url %}
+                    | <a href="{{ post.author.profile.snapchat_url  }}"class="fa fa-snapchat-ghost"></a>
+                    {% endif %}
+
+                    {% if post.author.profile.youtube_url %}
+                    | <a href="{{ post.author.profile.youtube_url  }}"class="fa fa-youtube"></a>
                     {% endif %}
                 </p>
                 <p class="card-text">{{ post.body|safe }}</p>
