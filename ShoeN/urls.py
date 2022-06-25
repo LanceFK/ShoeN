@@ -15,5 +15,4 @@ urlpatterns = [
     path('category/<str:cats>/', CategoryView.as_view(), name='category'),
     path('hangman', views.index, name='hangman'),
 
-
 ]

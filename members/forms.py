@@ -6,7 +6,7 @@ from ShoeN.models import Profile
 class ProfilePageForm(forms.ModelForm):
     class Meta:
         model= Profile
-        fields = ('bio', 'profile_pic', 'website_url', 'instagram_url', 'twitter_url', 'meta_url', 'pinterest_url')
+        fields = ('bio', 'profile_pic', 'website_url', 'instagram_url', 'twitter_url', 'meta_url', 'pinterest_url', 'soundcloud_url', 'snapchat_url', 'youtube_url')
 
         widgets = {
             'bio': forms.Textarea(attrs={'class': 'form-control'}),
@@ -16,9 +16,9 @@ class ProfilePageForm(forms.ModelForm):
             'twitter_url': forms.TextInput(attrs={'class': 'form-control'}),
             'meta_url': forms.TextInput(attrs={'class': 'form-control'}),
             'pinterest_url': forms.TextInput(attrs={'class': 'form-control'}),
-            # 'soundcloud_url': forms.TextInput(attrs={'class': 'form-control'}),
-            # 'snapchat_ur': forms.TextInput(attrs={'class': 'form-control'}),
-            # 'pinterest_url': forms.TextInput(attrs={'class': 'form-control'}),
+            'soundcloud_url': forms.TextInput(attrs={'class': 'form-control'}),
+            'snapchat_url': forms.TextInput(attrs={'class': 'form-control'}),
+            'youtube_url': forms.TextInput(attrs={'class': 'form-control'}),
 
 
     }

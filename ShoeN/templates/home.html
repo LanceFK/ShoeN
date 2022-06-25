@@ -6,76 +6,40 @@
     <img src="{% static '\logo\image\logo3.jpg' %}" class="rounded mx-auto d-block">
 </div>
 
-<!-- <h1>Shoe'N Posts</h1> -->
+<!-- <h1>Shoe'N Posts Home Page</h1> -->
 <br>
-
-    <ul>
-{% for post in object_list %}   
-        <div class="card mb-3" style="max-width: 800px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                {% if post.shoe_image %}
-                    <img src="{{ post.shoe_image.url }}" class="img-thumbnail">
-                {% endif %}
-                </div>
-                <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title"><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a></h5>
-                    <!-- <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a> -->
-                    <a>{{ post.category }}</a>
-
-                    <!-- <p class="small text-muted">
-                        {% if post.author.profile.website_url %}
-                            | <a href="{{ post.author.profile.website_url  }}">Website</a>
-                        {% endif %}
-
-                        {% if post.author.profile.instagram_url %}
-                            | <a href="{{ post.author.profile.instagram_url }}">Instagram</a>
-                        {% endif %}
-
-                        {% if post.author.profile.meta_url %}
-                            | <a href="{{ post.author.profile.meta_url  }}">Meta </a>
-                        {% endif %}
-
-                        {% if post.author.profile.twitter_url %}
-                            | <a href="{{ post.author.profile.twitter_url }}">Twitter</a>
-                        {% endif %}
-
-                        {% if post.author.profile.pinterest_url %}
-                            | <a href="{{ post.author.profile.pinterest_url  }}">Pinterest</a>
-                        {% endif %}
-                    </p> -->
-                    <p class="card-text">{{ post.body|safe }}</p>
-                    <p class="card-text"><small class="text-muted">By: {{ post.author }} - {{ post.post_date }}        
-                    {% if user.is_authenticated %}
-                        {% if user.id == post.author.id %}
-                            <a href="{% url 'update_post' post.pk %}">(Edit)</a>
-                            <a href="{% url 'delete_post' post.pk %}">(Delete)</a>
-                        {% endif %}
+<!-- <div class=' text-center'> -->
+        <ul>
+    {% for post in object_list %}   
+            <div class="card mb-3" style="max-width: 800px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                    {% if post.shoe_image %}
+                        <img src="{{ post.shoe_image.url }}" class="img-thumbnail">
                     {% endif %}
-                    </small></p>
+                    </div>
+                    <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a></h5>
+                        <!-- <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a> -->
+                        <a>{{ post.category }}</a>
 
-                    <!-- <form action="{% url 'like_post' post.pk %}" method="POST">
-                        {% csrf_token %}
+                        <p class="card-text">{{ post.body|safe }}</p>
+                        <p class="card-text"><small class="text-muted">By: {{ post.author }} - {{ post.post_date }}        
                         {% if user.is_authenticated %}
-                            {% if liked %}
-                                <button type='submit', name='post_id', value="{{ post.id }}", class="btn btn-danger btn-sm">UnNod!</button> 
-                            {% else %}
-                                <button type='submit', name='post_id', value="{{ post.id }}", class="btn btn-primary btn-sm">Nod!</button> 
+                            {% if user.id == post.author.id %}
+                                <a href="{% url 'update_post' post.pk %}">(Edit)</a>
+                                <a href="{% url 'delete_post' post.pk %}">(Delete)</a>
                             {% endif %}
-                        {% else %}
-                            <small>Login to Nod!</small>
                         {% endif %}
-                            - {{ total_likes}} Nods
-                    </form> -->
-            
-                </div>
+                        </small></p>
+                    </div>
+                    </div>
                 </div>
             </div>
-        </div>
-{% endfor %}
-    </ul>
-    
+    {% endfor %}
+        </ul>
+<!-- </div>    -->
 
 {% endblock %}
 <!-- Old set up before containers -->

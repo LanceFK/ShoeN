@@ -5,6 +5,7 @@ from .models import Post, Category
 from .forms import PostForm, EditForm
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
+from django.contrib.auth.models import User
 
 # Create your views here.
 # def home(request):

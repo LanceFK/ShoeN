@@ -34,11 +34,11 @@
             <div class="col-md-8">
             <div class="card-body">
                 <h5 class="card-title">{{ post.title }}</h5>
-                <p class="small text-muted">
-                    <a href="{% url 'show_profile_page' post.author.profile.id %}" class="fa fa-collection">Shoe'N</a>
+                <p class="medium text-muted">
+                    <a href="{% url 'show_profile_page' post.author.profile.id %}" class="fa fa-rss">Shoe'N</a>
 
                     {% if post.author.profile.website_url %}
-                        | <a href="{{ post.author.profile.website_url  }} " class="fa fa-linkedin"></a>
+                        | <a href="{{ post.author.profile.website_url  }}" class="fa fa-linkedin"></a>
                     {% endif %}
 
                     {% if post.author.profile.instagram_url %}
@@ -46,7 +46,7 @@
                     {% endif %}
 
                     {% if post.author.profile.meta_url %}
-                        | <a href="{{ post.author.profile.meta_url  }}" class="fa fa-facebook"> </a>
+                        | <a href="{{ post.author.profile.meta_url }}" class="fa fa-facebook"></a>
                     {% endif %}
 
                     {% if post.author.profile.twitter_url %}
@@ -54,19 +54,19 @@
                     {% endif %}
 
                     {% if post.author.profile.pinterest_url %}
-                        | <a href="{{ post.author.profile.pinterest_url  }}"class="fa fa-pinterest"></a>
+                        | <a href="{{ post.author.profile.pinterest_url }}" class="fa fa-pinterest"></a>
                     {% endif %}
 
                     {% if post.author.profile.soundcloud_url %}
-                    | <a href="{{ post.author.profile.soundcloud_url  }}"class="fa fa-soundcloud"></a>
+                        | <a href="{{ post.author.profile.soundcloud_url }}" class="fa fa-soundcloud"></a>
                     {% endif %}
 
                     {% if post.author.profile.snapchat_url %}
-                    | <a href="{{ post.author.profile.snapchat_url  }}"class="fa fa-snapchat-ghost"></a>
+                        | <a href="{{ post.author.profile.snapchat_url }}" class="fa fa-snapchat"></a>
                     {% endif %}
 
                     {% if post.author.profile.youtube_url %}
-                    | <a href="{{ post.author.profile.youtube_url  }}"class="fa fa-youtube"></a>
+                        | <a href="{{ post.author.profile.youtube_url }}" class="fa fa-youtube"></a>
                     {% endif %}
                 </p>
                 <p class="card-text">{{ post.body|safe }}</p>
