@@ -2,23 +2,23 @@
 {% load static %}
 
 {% block content %}
-<div class='text-center'>
-    <img src="{% static '\logo\image\logo3.jpg' %}" class="rounded mx-auto d-block">
-</div>
+    <div class='text-center'>
+        <img src="{% static '\logo\image\logo3.jpg' %}" class="rounded mx-auto d-block">
+    </div>
 
 <!-- <h1>Shoe'N Posts Home Page</h1> -->
 <br>
 <!-- <div class=' text-center'> -->
         <ul>
     {% for post in object_list %}   
-            <div class="card mb-3" style="max-width: 800px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
+        <div class="card mb-3" style="max-width: 800px;">
+            <div class="row g-0">
+                <div class="col-md-4">
                     {% if post.shoe_image %}
                         <img src="{{ post.shoe_image.url }}" class="img-thumbnail">
                     {% endif %}
-                    </div>
-                    <div class="col-md-8">
+                </div>
+                <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title"><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a></h5>
                         <!-- <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a> -->
@@ -34,9 +34,10 @@
                         {% endif %}
                         </small></p>
                     </div>
-                    </div>
                 </div>
             </div>
+        </div>
+
     {% endfor %}
         </ul>
 <!-- </div>    -->

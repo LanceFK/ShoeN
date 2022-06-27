@@ -20,7 +20,8 @@ class ShowProfilePageView(ListView):
         page_user = Post.objects.all()
         context = super(ShowProfilePageView, self).get_context_data(*args, **kwargs)
         # page_user = get_object_or_404(Post, id=self.kwargs['pk'])
-        context['page_user'] = page_user
+
+        context['page_user'] = page_user        
         return context
 
 # def show_profile_page(request):
