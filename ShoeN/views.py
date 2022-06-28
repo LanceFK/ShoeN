@@ -11,6 +11,19 @@ from django.contrib.auth.models import User
 # def home(request):
 #     return render(request, 'home.html', {})
 
+def search_shoes(request):
+    if request.method == 'POST':
+        searched = request.POST['searched']
+        shoes = Post.objects.all(name__contains=searched)
+
+        return render(request,'search_shoes.html',
+        {'searched':searched,
+        'shoes':shoes})
+    else:
+        return render(request,'search_shoes.html',
+        {})
+
+
 def index(request):
     return render(request, 'hangman.html')
 

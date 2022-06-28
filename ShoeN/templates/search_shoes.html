@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class='text-center'>
+        <img src="{% static '\logo\image\logo3.jpg' %}" class="rounded mx-auto d-block">
+    </div>
+
+        <center>
+    {% if searched %}
+        <h1>Searched For {{ searched }}</h1>
+        <br>
+        {% for shoe in shoes %}
+            
+            <a href="http://">{{ shoe }}</a>  
+
+        {% endfor %}
+
+    {% else %}
+        <h1>Please Search Shoes!</h1>
+    {% endif %}
+
+
+
+
+
+
+        </center>
+{% endblock %}
+
+
