@@ -11,10 +11,11 @@ from django.contrib.auth.models import User
 # def home(request):
 #     return render(request, 'home.html', {})
 
+# Search Bar results
 def search_shoes(request):
     if request.method == 'POST':
-        searched = request.POST['searched']
-        shoes = Post.objects.all(name__contains=searched)
+        searched = request.POST.get('searched')
+        shoes = Category.objects.filter(name__icontains=searched)
 
         return render(request,'search_shoes.html',
         {'searched':searched,
@@ -22,7 +23,6 @@ def search_shoes(request):
     else:
         return render(request,'search_shoes.html',
         {})
-
 
 def index(request):
     return render(request, 'hangman.html')
@@ -53,10 +53,11 @@ class HomeView(ListView):
 
 def CategoryListView(request):
     cat_menu_list = Category.objects.all()
-    return render(request, 'category_list.html', {'cat_menu_list': cat_menu_list})
+    return render(request, 'category_list.html', 
+    {'cat_menu_list': cat_menu_list})
 
 
-# Categories (User shoe collection displayed here).
+# Categories (My Collection displayed here).
 class CategoryView(ListView):   
         model = Post
         template_name = 'categories.html'

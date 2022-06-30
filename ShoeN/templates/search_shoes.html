@@ -2,27 +2,28 @@
 {% load static %}
 
 {% block content %}
-    <div class='text-center'>
+    <!-- <div class='text-center'>
         <img src="{% static '\logo\image\logo3.jpg' %}" class="rounded mx-auto d-block">
-    </div>
+    </div> -->
 
         <center>
     {% if searched %}
         <h1>Searched For {{ searched }}</h1>
         <br>
         {% for shoe in shoes %}
-            
             <a href="http://">{{ shoe }}</a>  
-
         {% endfor %}
 
     {% else %}
-        <h1>Please Search Shoes!</h1>
+        <h1>Is Your Shoe In?</h1>
     {% endif %}
 
 
-
-
+    <style type="text/css">
+        body {
+            background: rgb(235, 235, 219, 1);
+        }
+    </style>
 
 
         </center>
