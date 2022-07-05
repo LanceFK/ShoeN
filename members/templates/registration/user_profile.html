@@ -15,7 +15,30 @@
 <!-- {% endif %} -->
 
 {% if user.is_authenticated %}
-<div class="row .row-cols-3 row-cols-md-2 g-4">
+            {% for post in object_list %} 
+                <div class="card border-secondary mb-3" style="max-width: 540px;" name="collection">
+                    <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{ post.shoe_image.url }}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                        <h5 class="card-title">{{ post.category }}</h5>
+                        <p class="card-text">
+                            Model:<a href="{% url 'article-detail' post.pk %}"> {{ post.shoe_in }}</a>
+                            <a>-{{ post.author }}- <br> Colabo: {{ post.colaboration }}
+                            <br>
+                            Colors: {{ post.color_scheme_1 }}, {{ post.color_scheme_2 }}, {{ post.color_scheme_3 }}</a>
+                            <br/>
+                        </p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            {% endfor %}
+<br><br>
+
+<!-- <div class="row .row-cols-3 row-cols-md-2 g-4">
             <div class="card border-secondary mb-3" style="width: 18rem;">
                 {% for post in object_list %} 
                     <img src="{{ post.shoe_image.url }}" class="card-img-top">
@@ -32,7 +55,7 @@
                     </div>
                 {% endfor %}
             </div>
-</div> 
+</div>  -->
 {% else %}
     Please Login to Shoe'N!
 {% endif %}

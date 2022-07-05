@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<h1>{{ user }}'s Collection</h1>
+<p>Shoe Count:</p>
+<br><br>
+<ul>
+        {% for post in posts %}
+            <div class="card border-secondary mb-3" style="max-width: 540px;" name="collection">
+                <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{ post.shoe_image.url }}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ post.category }}</h5>
+                    <p class="card-text">
+                        Model:<a href="{% url 'article-detail' post.pk %}"> {{ post.shoe_in }}</a>
+                        <a>-{{ post.author }}- <br> Colabo: {{ post.colaboration }}
+                        <br>
+                        Colors: {{ post.color_scheme_1 }}, {{ post.color_scheme_2 }}, {{ post.color_scheme_3 }}</a>
+                        <br/>
+                    </p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        {% endfor %}
+</ul>
+
+<a href="{% url 'home' %}" class="btn btn-secondary">Home</a>
+<br>
+<br>
+
+<style type="text/css">
+    body {
+        background: rgb(235, 235, 219, 1);
+    }
+</style>
+
+
+
+
+
+
+{% endblock %}
+

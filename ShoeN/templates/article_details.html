@@ -41,7 +41,9 @@
             <div class="card-body">
                 <h5 class="card-title">{{ post.title }}</h5>
                 <p class="medium text-muted">
-                    <a href="{% url 'show_profile_page' post.author.profile.id %}" class="fa fa-rss">Shoe'N</a>
+                        <a href="{% url 'my_collection' %}">
+                            <img src=" {% static 'shoen\images\default_profile_pic.jpg' %} " class="rounded-circle" width=25 height=25>
+                        </a>
 
                     {% if post.author.profile.website_url %}
                         | <a href="{{ post.author.profile.website_url  }}" class="fa fa-linkedin"></a>
@@ -107,7 +109,7 @@
         </form>
     </div>
     <br>
-    <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+    <a href="{% url 'home' %}" class="btn btn-secondary">Home</a>
     <br>
     <br>
 

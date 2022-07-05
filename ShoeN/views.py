@@ -57,7 +57,7 @@ def CategoryListView(request):
     {'cat_menu_list': cat_menu_list})
 
 
-# Categories (My Collection displayed here).
+# Categories (DB Collection displayed here).
 class CategoryView(ListView):   
         model = Post
         template_name = 'categories.html'

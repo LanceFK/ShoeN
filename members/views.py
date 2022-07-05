@@ -1,6 +1,7 @@
+from atexit import register
 from msilib.schema import ListView
 from pydoc import pager
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect
 from django.views import generic
 from django.views.generic import ListView, CreateView
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
@@ -8,8 +9,22 @@ from django.contrib.auth.views import PasswordChangeView
 from django.urls import reverse_lazy  # Reverse lazy will redirect back
 from .forms import ProfilePageForm, SignUpForm, EditProfileForm, PasswordChangingForm, ProfilePageForm
 from ShoeN.models import Profile, Post 
+from django.contrib import messages
 
 # Create your views here.
+def my_collection(request):
+    if request.user.is_authenticated:
+        me = request.user.id
+        posts = Post.objects.filter(author=me)
+
+        return render(request, 'registration/my_collection.html', {
+        'posts':posts
+        })
+    
+    else:
+        messages.success(request, ('Please Login under your own profile!'))
+        return redirect('home')
+
 
 class ShowProfilePageView(ListView):
     model = Post
@@ -17,7 +32,7 @@ class ShowProfilePageView(ListView):
     ordering = ['-post_date']
 
     def get_context_data(self, *args, **kwargs):
-        page_user = Post.objects.all()
+        page_user = Post.objects.filter(id=self.kwargs['pk'])
         context = super(ShowProfilePageView, self).get_context_data(*args, **kwargs)
         # page_user = get_object_or_404(Post, id=self.kwargs['pk'])
 

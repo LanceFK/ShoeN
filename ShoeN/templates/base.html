@@ -19,7 +19,7 @@
           <a class="navbar-brand" href="{% url 'home' %}"> 
             <div class="d-flex flex-nowrap">
               <div class="order-1 p-2"></div>
-                  <img src=" {% static 'shoen\images\default_profile_pic.jpg' %} " class="rounded-circle" width=70 height=70>
+                  <img src=" {% static 'shoen\images\default_profile_pic.jpg' %} " class="rounded-circle" width=60 height=60>
             </div>
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,12 +32,12 @@
               
             {% if user.is_authenticated %}
               {% if cat_menu %}
-                <!-- <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Catagories
-                  </a> -->
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown"> 
-
+                    
+                    Category
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown"> 
                       {% for item in cat_menu %}
                       <a class="dropdown-item" href="{% url 'category' item|slugify %}">{{ item }}</a>
                       {% endfor %}
@@ -72,7 +72,8 @@
 
                     {% if user.profile.id %}
                     <li><a class="dropdown-item" href="{% url 'edit_profile_page' user.profile.id %}">Update Profile</a></li>
-                    <li><a class="dropdown-item" href="{% url 'show_profile_page' user.profile.id %}">My Collection</a></li>
+                    <!-- <li><a class="dropdown-item" href="{% url 'show_profile_page' user.profile.id %}">My Collection</a></li> -->
+                    <li><a class="dropdown-item" href="{% url 'my_collection' %}">Sample Collection</a></li>
                     <li><a class="dropdown-item" href="{% url 'logout' %}">Log Out</a></li>    
                     {% else %}
                     <a class="dropdown-item" href="{% url 'create_profile_page' %}">Create Profile Page</a>                    
@@ -105,6 +106,7 @@
         </div>
     </nav>
 
+    
     <br>
     <div class="container">
         {% block content %}

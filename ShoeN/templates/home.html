@@ -21,9 +21,8 @@
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title"><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a></h5>
-                        <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a>
-                        <!-- <a>{{ post.category }}</a> -->
-
+                        <!-- <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a> -->
+                        <a>{{ post.category }}</a>
                         <p class="card-text">{{ post.body|safe }}</p>
                         <p class="card-text"><small class="text-muted">By: {{ post.author }} - {{ post.post_date }}        
                         {% if user.is_authenticated %}
