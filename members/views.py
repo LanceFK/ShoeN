@@ -1,6 +1,7 @@
 from atexit import register
 from msilib.schema import ListView
 from pydoc import pager
+from unicodedata import category
 from django.shortcuts import render, redirect
 from django.views import generic
 from django.views.generic import ListView, CreateView
@@ -10,15 +11,19 @@ from django.urls import reverse_lazy  # Reverse lazy will redirect back
 from .forms import ProfilePageForm, SignUpForm, EditProfileForm, PasswordChangingForm, ProfilePageForm
 from ShoeN.models import Profile, Post 
 from django.contrib import messages
+from django.contrib.auth.models import User
 
 # Create your views here.
 def my_collection(request):
     if request.user.is_authenticated:
         me = request.user.id
         posts = Post.objects.filter(author=me)
+        shoe_count = Post.objects.filter(author=me).count() 
+
 
         return render(request, 'registration/my_collection.html', {
-        'posts':posts
+        'posts':posts,
+        'shoe_count':shoe_count
         })
     
     else:

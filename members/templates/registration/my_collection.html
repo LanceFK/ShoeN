@@ -5,7 +5,8 @@
 
 
 <h1>{{ user }}'s Collection</h1>
-<p>Shoe Count:</p>
+
+        <STRONG><p>Collection: {{ shoe_count }}</p></STRONG>
 <br><br>
 <ul>
         {% for post in posts %}
@@ -19,7 +20,7 @@
                     <h5 class="card-title">{{ post.category }}</h5>
                     <p class="card-text">
                         Model:<a href="{% url 'article-detail' post.pk %}"> {{ post.shoe_in }}</a>
-                        <a>-{{ post.author }}- <br> Colabo: {{ post.colaboration }}
+                        <br> Colabo: {{ post.colaboration }}
                         <br>
                         Colors: {{ post.color_scheme_1 }}, {{ post.color_scheme_2 }}, {{ post.color_scheme_3 }}</a>
                         <br/>
