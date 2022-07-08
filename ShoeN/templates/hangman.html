@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<div class="info">Welcome to Shoe'N Hangman! Guess one letter at a time or the whole word, but if you get the word wrong you lose 2 guesses!</div>
+<medium><div class="info">Welcome to Shoe'N Hangman! If you guess the word wrong, you lose 2 guesses!</div></medium>
 <input type="text" placeholder="Guess Here">
 <button style="display:none;">One More Try?</button>
 <div class="word"></div>
@@ -314,7 +314,7 @@ function generateWord() {
 document.querySelector('input').addEventListener('change', function() {
   if (this.value !== "" && this.value !== " ") {
     if (this.value.length > 1) {
-      if (this.value.length !== word.length) alert('Your guess is not the same length as the word!');
+      if (this.value.length !== word.length) alert('Wrong Word!');
       else if (this.value == word) {
         for (let i = 0; i < word.length; i++) {
           document.querySelector('.word').querySelectorAll('span')[i].innerHTML = word[i];
@@ -351,9 +351,9 @@ document.querySelector('input').addEventListener('change', function() {
           if (guessedElem.innerHTML == '') guessedElem.innerHTML = this.value.toUpperCase();
           else guessedElem.innerHTML += ', ' + this.value.toUpperCase();
         } else fadeColor('#35c435');
-      } else alert('You have already guessed that letter!');
+      } else alert('Choose another letter!');
       if (currentWord.join('') === word) finish();
-    } else alert('Please guess letters only');
+    } else alert('Letters only!');
     this.value = '';
     if (guessesLeft <= 0) {
       guessesLeft = 0;
@@ -364,7 +364,7 @@ document.querySelector('input').addEventListener('change', function() {
         }
       }
       // fadeColor('#ff2929');
-      alert('You lost!');
+      alert('You have lost!');
       document.querySelector('input').style.display = 'none';
       document.querySelector('button').style.display = null;
       stats.streak = 0;
@@ -387,7 +387,7 @@ function finish() {
   // var rightGuesses = guessed.length - wrongGuesses;
   var rightGuesses = word.length;
   let score = Math.floor((rightGuesses / (wrongGuesses + rightGuesses)) * 100) || 100;
-  alert('Congratulations! Score: ' + score + '%');
+  alert('Congratulations!! Your Score: ' + score + '%');
   stats.streak++;
   stats.scores.push(score);
   setScore();

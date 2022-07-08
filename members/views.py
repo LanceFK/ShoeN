@@ -10,8 +10,9 @@ from django.contrib.auth.views import PasswordChangeView
 from django.urls import reverse_lazy  # Reverse lazy will redirect back
 from .forms import ProfilePageForm, SignUpForm, EditProfileForm, PasswordChangingForm, ProfilePageForm
 from ShoeN.models import Profile, Post 
-from django.contrib import messages
 from django.contrib.auth.models import User
+from django.contrib import messages
+
 
 # Create your views here.
 def my_collection(request):
@@ -20,6 +21,14 @@ def my_collection(request):
         posts = Post.objects.filter(author=me)
         shoe_count = Post.objects.filter(author=me).count() 
 
+        shoe_count = 1
+
+        while (shoe_count <= 10):
+                print (str(shoe_count) + ': Nice Collectin')
+                print(shoe_count)
+                shoe_count+=1
+
+
 
         return render(request, 'registration/my_collection.html', {
         'posts':posts,
@@ -27,10 +36,10 @@ def my_collection(request):
         })
     
     else:
-        messages.success(request, ('Please Login under your own profile!'))
+        messages.success(request, ('You gotta Login!'))
         return redirect('home')
 
-
+# Show Profile is not in use, runs on backend
 class ShowProfilePageView(ListView):
     model = Post
     template_name = 'registration/user_profile.html'
