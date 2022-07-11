@@ -1,3 +1,4 @@
+from asyncore import loop
 from atexit import register
 from msilib.schema import ListView
 from pydoc import pager
@@ -16,19 +17,39 @@ from django.contrib import messages
 
 # Create your views here.
 def my_collection(request):
+    shoe_count = 1
+    while (shoe_count <= 100):
+            # if shoe_count:
+            if (shoe_count == 1):
+                messages.success(request, ('NICE COLLECTION!'))
+                print(str(shoe_count) + '. Nice Collection!')
+            
+            elif (shoe_count == 10):
+                messages.success(request, ('COOL COLLECTION!'))
+                print(str(shoe_count) + '. Cool Collection!')
+                
+            elif (shoe_count == 25):
+                messages.success(request, ('DOPE COLLECTION!'))
+                print(str(shoe_count) + '. Dope Collection!')
+
+            elif (shoe_count == 50):
+                messages.success(request, ('SUPREME CLIENTELE!'))
+                print(str(shoe_count) + '. Supreme Clientele!')
+
+            elif (shoe_count == 80):
+                messages.success(request, ("SHOELLIONAIRE STATUS!"))
+                print(str(shoe_count) + '. Shoelionaire Satus!')
+
+            else:
+                print(str(shoe_count) + '.') 
+            shoe_count+=1
+    else:
+        print('This message is outside the loop!')
+
     if request.user.is_authenticated:
         me = request.user.id
         posts = Post.objects.filter(author=me)
         shoe_count = Post.objects.filter(author=me).count() 
-
-        shoe_count = 1
-
-        while (shoe_count <= 10):
-                print (str(shoe_count) + ': Nice Collectin')
-                print(shoe_count)
-                shoe_count+=1
-
-
 
         return render(request, 'registration/my_collection.html', {
         'posts':posts,
@@ -36,7 +57,7 @@ def my_collection(request):
         })
     
     else:
-        messages.success(request, ('You gotta Login!'))
+        # messages.success(request, ('You gotta Login!'))
         return redirect('home')
 
 # Show Profile is not in use, runs on backend
@@ -52,15 +73,6 @@ class ShowProfilePageView(ListView):
 
         context['page_user'] = page_user        
         return context
-
-# def show_profile_page(request):
-#     cat_menu_list = Post.objects.all()
-#     return render(request, 'registration/user_profile.html', {'cat_menu_list': cat_menu_list})
-
-    # def show_profile_page(request):
-    #     event_list = Post.objects.all()
-    #     return render(request, 'registration/user_profile.html', 
-    #     {'event_list': event_list})
 
 class CreateProfilePageView(CreateView):
     model = Profile

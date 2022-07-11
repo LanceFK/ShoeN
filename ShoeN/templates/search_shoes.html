@@ -5,18 +5,37 @@
     <!-- <div class='text-center'>
         <img src="{% static '\logo\image\logo3.jpg' %}" class="rounded mx-auto d-block">
     </div> -->
-
-        <center>
     {% if searched %}
-        <h1>Searched For {{ searched }}</h1>
+        <h3>You Searched For {{ searched }}</h3>
+            {% for shoe in shoes %}
+                <center>
+                <div class="container" name="collection">
+                    <div class="card border-secondary mb-3" style="width: 600px;">
+                        <div class="row row g-0">
+                            <div class="col">
+                                <img src="{{ shoe.shoe_image.url }}" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ shoe.category }}</h5>
+                                    <p class="card-text">
+                                        Model:<a href=""> {{ shoe.shoe_in }}</a>
+                                        <br> Colabo: {{ shoe.colaboration }} 
+                                        <br>
+                                        Colors: {{ shoe.color_scheme_1 }}, {{ shoe.color_scheme_2 }}, {{ shoe.color_scheme_3 }}</a>
+                                        <br> Username: {{ shoe.author }}
+                                        <br/>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </center>
+            {% endfor %}
         <br>
-        {% for shoe in shoes %}
-            <a href="http://">{{ shoe }}</a>  
-        {% endfor %}
-
     {% else %}
         <h1>Is Your Shoe In?</h1>
-    {% endif %}
+    {% endif %} 
 
 
     <style type="text/css">
@@ -26,7 +45,6 @@
     </style>
 
 
-        </center>
 {% endblock %}
 
 

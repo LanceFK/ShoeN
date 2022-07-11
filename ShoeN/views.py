@@ -15,7 +15,7 @@ from django.contrib.auth.models import User
 def search_shoes(request):
     if request.method == 'POST':
         searched = request.POST.get('searched')
-        shoes = Category.objects.filter(name__icontains=searched)
+        shoes = Post.objects.filter(category__icontains=searched)
 
         return render(request,'search_shoes.html',
         {'searched':searched,
@@ -23,6 +23,7 @@ def search_shoes(request):
     else:
         return render(request,'search_shoes.html',
         {})
+
 
 def index(request):
     return render(request, 'hangman.html')

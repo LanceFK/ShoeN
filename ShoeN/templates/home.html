@@ -2,13 +2,7 @@
 {% load static %}
 
 {% block content %}
-    <!-- <div class='text-center'>
-        <img src="{% static '\logo\image\logo3.jpg' %}" class="rounded mx-auto d-block">
-    </div> -->
-
-<!-- <h1>Shoe'N Posts Home Page</h1> -->
 <br>
-<!-- <div class=' text-center'> -->
         <ul>
     {% for post in object_list %}   
         <div class="card border-secondary mb-3" style="max-width: 800px;">
@@ -27,8 +21,8 @@
                         <p class="card-text"><small class="text-muted">By: {{ post.author }} - {{ post.post_date }}        
                         {% if user.is_authenticated %}
                             {% if user.id == post.author.id %}
-                                <a href="{% url 'update_post' post.pk %}">(Edit)</a>
-                                <a href="{% url 'delete_post' post.pk %}">(Delete)</a>
+                                <a href="{% url 'update_post' post.pk %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Edit</a>
+                                <a href="{% url 'delete_post' post.pk %}" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Delete</a>
                             {% endif %}
                         {% endif %}
                         </small></p>
