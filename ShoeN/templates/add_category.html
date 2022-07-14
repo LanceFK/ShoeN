@@ -4,9 +4,6 @@
 
 
 {% if user.is_authenticated %}
-    <h1>Add Brand</h1>
-
-    <br>
     <div class="form-group">
         <form  method="POST">
             {% csrf_token %}
@@ -18,7 +15,7 @@
     </div>
 
 {% else %}
-    Please Login to Shoe'N!
+    <STRONG>Please Login to Shoe'N!</STRONG>
 {% endif %}
 
 

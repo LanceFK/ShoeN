@@ -1,10 +1,14 @@
 {% load static %}
 <br>
-<div class="header"><a href="{% url 'home' %}" class="btn btn-light">Back</a></div>
+<div class="header"><a href="{% url 'home' %}" class="btn btn-light">                        
+    <a href="{% url 'home' %}">
+    <img src=" {% static 'shoen\images\default_profile_pic.jpg' %} " class="rounded-circle" width=40 height=40>
+    </a>
+</a></div>
 
 {% block content %}
 
-<medium><div class="info">Welcome to Shoe'N Hangman!</div></medium>
+<medium><div class="info">Welcome To Shoe'N Hangman!</div></medium>
 <input type="text" placeholder="Guess Here">
 <button style="display:none;">One More Try?</button>
 <div class="word"></div>

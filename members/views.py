@@ -13,7 +13,8 @@ from .forms import ProfilePageForm, SignUpForm, EditProfileForm, PasswordChangin
 from ShoeN.models import Profile, Post 
 from django.contrib.auth.models import User
 from django.contrib import messages
-
+# Import Pagination Here
+from django.core.paginator import Paginator
 
 # Create your views here.
 def my_collection(request):
@@ -48,13 +49,21 @@ def my_collection(request):
 
     if request.user.is_authenticated:
         me = request.user.id
-        posts = Post.objects.filter(author=me)
+        posts = Post.objects.filter(author=me).order_by('category')
         shoe_count = Post.objects.filter(author=me).count() 
 
-        return render(request, 'registration/my_collection.html', {
-        'posts':posts,
-        'shoe_count':shoe_count
-        })
+        # Pagination setup
+        p = Paginator(Post.objects.filter(author=me).order_by('category'),5 )
+        page = request.GET.get('page')
+        posts_list = p.get_page(page)
+        nums = "a" * posts_list.paginator.num_pages
+
+        return render(request, 'registration/my_collection.html', 
+        {'posts':posts,
+        'shoe_count':shoe_count,
+        'posts_list':posts_list,
+        'nums':nums}
+        )
     
     else:
         # messages.success(request, ('You gotta Login!'))

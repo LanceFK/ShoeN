@@ -5,10 +5,10 @@
 
 
 <h2>{{ user }}'s Collection <STRONG># {{ shoe_count }}</STRONG></h2>
-
+<hr>
 <br>
 <ul>
-        {% for post in posts %}
+        {% for post in posts_list %}
     <div class="container" name="collection">
             <div class="card border-secondary mb-3" style="width: 400px;">
                 <div class="row g-0">
@@ -23,7 +23,8 @@
                                 <br> Colabo: {{ post.colaboration }}
                                 <br>
                                 Colors: {{ post.color_scheme_1 }}, {{ post.color_scheme_2 }}, {{ post.color_scheme_3 }}</a>
-                                <br/>
+                                <br>
+                                <small class="text-muted">{{ post.post_date }}</small>
                             </p>
                         </div>
                     </div>
@@ -33,7 +34,7 @@
         {% endfor %}
 </ul>
 
-<a href="{% url 'home' %}" class="btn btn-secondary">Home</a>
+<!-- <a href="{% url 'home' %}" class="btn btn-secondary">Home</a> -->
 <br>
 <br>
 
@@ -42,6 +43,33 @@
         background: rgb(235, 235, 219, 1);
     }
 </style>
+
+<!-- Pagination Stuff -->
+<!-- {{ posts_list }}<br>
+Has Previous: {{ posts_list.has_previous }}<br>
+Has Next: {{ posts_list.has_next }}
+Current Page: {{ posts_list.number }}
+Number of Pages: {{ posts_list.paginator.num_pages }}
+<hr><br> -->
+
+<nav aria-label="Page navigation example">
+<ul class="pagination justify-content-center">
+        {% if posts_list.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page=1">&laquo First</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ posts_list.previous_page_number }}">Previous</a></li>
+        {% endif %}
+
+        {%  for i in nums %}
+            <li class="page-item"><a class="page-link" href="?page={{ forloop.counter }}">{{ forloop.counter }}</a></li>
+        {% endfor %}
+
+        {% if posts_list.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ posts_list.next_page_number }}">Next</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ posts_list.paginator.num_pages }}">Last &raquo</a></li>
+        {% endif %}
+        <br><br><br>
+</ul>
+</nav>
 
 
 {% endblock %}

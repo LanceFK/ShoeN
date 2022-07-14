@@ -6,7 +6,8 @@
         <img src="{% static '\logo\image\logo3.jpg' %}" class="rounded mx-auto d-block">
     </div> -->
     {% if searched %}
-        <h3>You Searched For {{ searched }}</h3>
+        <h4>You Searched For {{ searched }}</h4>
+        <hr>
             {% for shoe in shoes %}
                 <center>
                 <div class="container" name="collection">
