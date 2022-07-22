@@ -18,41 +18,30 @@ from django.core.paginator import Paginator
 
 # Create your views here.
 def my_collection(request):
-    shoe_count = 1
-    while (shoe_count <= 100):
-            # if shoe_count:
-            if (shoe_count == 1):
-                messages.success(request, ('NICE COLLECTION!'))
-                print(str(shoe_count) + '. Nice Collection!')
-            
-            elif (shoe_count == 10):
-                messages.success(request, ('COOL COLLECTION!'))
-                print(str(shoe_count) + '. Cool Collection!')
-                
-            elif (shoe_count == 25):
-                messages.success(request, ('DOPE COLLECTION!'))
-                print(str(shoe_count) + '. Dope Collection!')
-
-            elif (shoe_count == 50):
-                messages.success(request, ('SUPREME CLIENTELE!'))
-                print(str(shoe_count) + '. Supreme Clientele!')
-
-            elif (shoe_count == 80):
-                messages.success(request, ("SHOELLIONAIRE STATUS!"))
-                print(str(shoe_count) + '. Shoelionaire Satus!')
-
-            else:
-                print(str(shoe_count) + '.') 
-            shoe_count+=1
-    else:
-        print('This message is outside the loop!')
-
     if request.user.is_authenticated:
         me = request.user.id
         posts = Post.objects.filter(author=me).order_by('category')
         shoe_count = Post.objects.filter(author=me).count() 
 
-        # Pagination setup
+# Collection counter
+        if(shoe_count == 3):
+            messages.success(request, ('NICE COLLECTION!'))
+            print('Nice Collection')
+        if(shoe_count == 4):
+            messages.success(request, ('COOL COLLECTION!'))
+            print('Cool Collection')
+        if(shoe_count == 5):
+            messages.success(request, ('DOPE COLLECTION!'))
+            print('Dope Collection')
+        if(shoe_count == 6):
+            messages.success(request, ('SUPREME CLIENTELE!'))
+            print('Supreme Clientele')
+        if(shoe_count == 7):
+            messages.success(request, ("SHOELLIONAIRE STATUS!"))
+            print('Shoellionaire Status')
+
+
+        # Pagination setup 
         p = Paginator(Post.objects.filter(author=me).order_by('category'),5 )
         page = request.GET.get('page')
         posts_list = p.get_page(page)
@@ -64,9 +53,9 @@ def my_collection(request):
         'posts_list':posts_list,
         'nums':nums}
         )
-    
+
     else:
-        # messages.success(request, ('You gotta Login!'))
+        # You cannot view My Collection from Arclticle details.html unless logged in.
         return redirect('home')
 
 # Show Profile is not in use, runs on backend

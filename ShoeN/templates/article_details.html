@@ -5,19 +5,19 @@
 
         <div class="d-flex flex-nowrap">
             {% if post.author.profile.profile_pic %}
-            <div class="order-1 p-2">
-                    <div class="container" name="article_bio">
-                        <img src=" {{ post.author.profile.profile_pic.url }} " class="rounded-circle" width=150 height=150>
-                    </div>
-            </div>
-            <div class="order-2 p-2">
-                    <div><p class="text-sm-start">{{ post.author.profile.bio }}</p></div>
-            </div>            
-                    <br><br/>
+                <div class="order-1 p-2">
+                        <div class="container" name="article_bio">
+                            <img src=" {{ post.author.profile.profile_pic.url }} " class="rounded-circle" width=150 height=150>
+                        </div>
+                </div>
+                <br><br/>
             {% else %}
                 <img src=" {% static 'shoen\images\default_profile_pic.jpg' %} " class="rounded-circle" width=150 height=150>
                 <br><br/>
             {% endif %}
+                <div class="order-2 p-2">
+                    <div><p class="text-sm-start">{{ post.author.profile.bio }}</p></div>
+                </div>            
         </div>
         <br>
     <!-- <small>
@@ -104,7 +104,7 @@
             {% else %}
                 <STRONG><large>Login to Nod!</large></STRONG>
             {% endif %}
-                <STRONG>- {{ total_likes}} Nods</STRONG>
+                <STRONG>- {{ total_likes }} Nods</STRONG>
         </form>
     </div>
     <br>

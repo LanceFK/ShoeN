@@ -4,10 +4,7 @@
 
 
 {% if user.is_authenticated %}
-    <h1>Create Shoe'N Profile</h1>
-
-    <br>
-    <br>
+    <h2>Create Profile</h2>
     <div class="form-group">
         <form  method="POST" enctype="multipart/form-data">
             {% csrf_token %}

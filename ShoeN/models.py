@@ -40,7 +40,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     shoe_image = models.ImageField(null=False, blank=False, upload_to='images/')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    body = RichTextField(blank=True, null=True)
+    body = RichTextField(blank=True, null=True, max_length=530)
     # body = models.TextField()
     post_date = models.DateField(auto_now_add=True)
     category = models.CharField(max_length=255, default='select_shoe')

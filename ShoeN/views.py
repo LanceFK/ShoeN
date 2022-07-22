@@ -90,8 +90,6 @@ class ArticleDetailView(DetailView):
         context['liked'] = liked
         return context
 
-
-
 class AddPostView(CreateView):
     model = Post
     form_class = PostForm
