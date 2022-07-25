@@ -13,20 +13,6 @@
     <title>Welcome To Shoe'N</title>
   </head>
   <body>
-    
-    {% if user.is_authenticated %}
-      <!-- Messages Alert formatting here -->
-        {% if messages %}
-          {% for message in messages %}
-          <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <!-- <h4 class="alert-heading">Congrats!</h4> -->
-            <h3><strong><p class="mb-80">{{ message }}</p></strong></h3>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-          {% endfor %}
-        {% endif %}
-    {% endif %}
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="{% url 'home' %}"> 

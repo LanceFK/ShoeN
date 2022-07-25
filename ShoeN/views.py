@@ -15,11 +15,11 @@ from django.contrib.auth.models import User
 def search_shoes(request):
     if request.method == 'POST':
         searched = request.POST.get('searched')
-        shoes = Post.objects.filter(category__icontains=searched)
+        posts = Post.objects.filter(category__icontains=searched)
 
         return render(request,'search_shoes.html',
-        {'searched':searched,
-        'shoes':shoes})
+        {'searched':searched.title(),
+        'posts':posts})
     else:
         return render(request,'search_shoes.html',
         {})

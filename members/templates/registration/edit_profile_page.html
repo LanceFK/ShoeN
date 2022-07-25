@@ -11,12 +11,12 @@
                 <form  method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form.as_p }}  
-                    <button class="btn btn-secondary">Update Profile</button>
+                    <button class="btn btn-secondary">Update</button>
                 </form>
             </div>
 
             <br>
-            <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+            <!-- <a href="{% url 'home' %}" class="btn btn-secondary">Back</a> -->
 
     {% else %}
         Please Login to Shoe'N!

@@ -2,48 +2,59 @@
 {% load static %}
 
 {% block content %}
-    <!-- <div class='text-center'>
-        <img src="{% static '\logo\image\logo3.jpg' %}" class="rounded mx-auto d-block">
-    </div> -->
+
     {% if searched %}
-        <h4>You Searched For {{ searched }}</h4>
+        <h4>Searched For {{ searched }}</h4>
         <hr>
-            {% for shoe in shoes %}
-                <center>
-                <div class="container" name="collection">
-                    <div class="card border-secondary mb-3" style="width: 600px;">
-                        <div class="row row g-0">
-                            <div class="col">
-                                <img src="{{ shoe.shoe_image.url }}" class="img-fluid rounded-start" alt="...">
+
+            {% for post in posts %}
+                <div class="container">
+                    <div class="card border-secondary mb-3" style="width: 400px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="{{ post.shoe_image.url }}" class="img-fluid rounded-start" alt="...">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ shoe.category }}</h5>
+                                    <h5 class="card-title">{{ post.category }}</h5>
                                     <p class="card-text">
-                                        Model:<a href=""> {{ shoe.shoe_in }}</a>
-                                        <br> Colabo: {{ shoe.colaboration }} 
+                                        <a href="{% url 'article-detail' post.pk %}">{{ post.shoe_in }}</a>
+                                        <br>{{ post.colaboration }} 
                                         <br>
-                                        Colors: {{ shoe.color_scheme_1 }}, {{ shoe.color_scheme_2 }}, {{ shoe.color_scheme_3 }}</a>
-                                        <br> By: {{ shoe.author }}
+                                        {{ post.color_scheme_1 }}, {{ post.color_scheme_2 }}, {{ post.color_scheme_3 }}</a>
+                                        <br><small class="text-muted">By: {{ post.author }} - {{ post.post_date }}</small>
                                         <br/>
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </center>
+                </div>
             {% endfor %}
-        <br>
+        <br>    
     {% else %}
         <h2>Is Your Shoe In?</h2>
     {% endif %} 
 
+<style type="text/css">
+    body {
+        background: rgb(235, 235, 219, 1);
+    }
+    
+</style>
 
-    <style type="text/css">
-        body {
-            background: rgb(235, 235, 219, 1);
-        }
-    </style>
+<!-- Pagination Stuff -->
+
+<!-- Has Previous: {{ posts_list.has_previous }}<br>
+Has Next: {{ posts_list.has_next }}
+Current Page: {{ posts_list.number }}
+Number of Pages: {{ posts_list.paginator.num_pages }}
+<hr><br> --> 
+
+
+
+
+
 
 
 {% endblock %}

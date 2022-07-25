@@ -27,22 +27,21 @@ def my_collection(request):
         if(shoe_count == 3):
             messages.success(request, ('NICE COLLECTION!'))
             print('Nice Collection')
-        if(shoe_count == 4):
+        elif(shoe_count == 15):
             messages.success(request, ('COOL COLLECTION!'))
             print('Cool Collection')
-        if(shoe_count == 5):
+        elif(shoe_count == 100):
             messages.success(request, ('DOPE COLLECTION!'))
             print('Dope Collection')
-        if(shoe_count == 6):
+        elif(shoe_count == 500):
             messages.success(request, ('SUPREME CLIENTELE!'))
             print('Supreme Clientele')
-        if(shoe_count == 7):
+        elif(shoe_count == 2755):
             messages.success(request, ("SHOELLIONAIRE STATUS!"))
             print('Shoellionaire Status')
 
-
         # Pagination setup 
-        p = Paginator(Post.objects.filter(author=me).order_by('category'),5 )
+        p = Paginator(Post.objects.filter(author=me).order_by('category'),25 )
         page = request.GET.get('page')
         posts_list = p.get_page(page)
         nums = "a" * posts_list.paginator.num_pages
