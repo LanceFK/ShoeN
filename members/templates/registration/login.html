@@ -1,12 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"/>
+<title>Welcome To Shoe'N</title>
 {% extends 'base.html' %}
 {% block title %}Login{% endblock %}
-
 {% block content %}
 {% load static %}
 
 
 <div class='text-center'>
-    <img src="{% static '\logo\image\logo2.jpg' %}" class="rounded mx-auto d-block">
+    <img src="{% static '\logo\image\logo2.jpg' %}" class="rounded mx-auto d-block" alt="shoe'n shoe logo">
 </div>
 <h3>LogiN</h3>
 
@@ -30,11 +33,9 @@
 </div>
 
 
-
-<style type="text/css">
-body {
-    background: rgb(235, 235, 219, 1);
-}
+<style>
+    body {
+        background: rgb(235, 235, 219, 1);
+    }
 </style>
-
 {% endblock %}

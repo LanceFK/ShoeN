@@ -1,13 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"/>
+<title>Welcome To Shoe'N</title>
 {% extends 'base.html' %}
-
 {% block content %}
 
 
 {% if user.is_authenticated %}
     {% if user.id == post.author.id %}
 
-        <h1>Update Post</h1>
-        <br>
+        <h2>Update Post</h2>
+
         <div class="form-group">
             <form  method="POST">
                 {% csrf_token %}
@@ -23,11 +26,11 @@
     Please Login to Shoe'N!
 {% endif %}
 <br>
-<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+<!-- <a href="{% url 'home' %}" class="btn btn-secondary">Back</a> -->
 <br><br>
 
 
-<style type="text/css">
+<style>
     body {
         background: rgb(235, 235, 219, 1);
     }

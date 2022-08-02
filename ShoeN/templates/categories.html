@@ -1,9 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"/>
+<title>Welcome To Shoe'N</title>
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
 <div class='text-center'>
-    <img src="{% static '\logo\image\logo1.jpg' %}" class="rounded mx-auto d-block">
+    <img src="{% static '\logo\image\logo1.jpg' %}" class="rounded mx-auto d-block" alt="Shoe'N logo">
 </div>
 
 <!-- # User shoe Collection stored here -->
@@ -22,7 +25,7 @@
 {% if user.is_authenticated %}
                 <div class="card" style="width: 18rem;">
                     {% for post in object_list %} 
-                        <img src="{{ post.shoe_image.url }}" class="card-img-top">
+                        <img src="{{ post.shoe_image.url }}" class="card-img-top" alt="Shoe'N picture of a shoe">
                         <div class="card-body">
                             <p class="card-text">
                                 {{ post.category }}
@@ -45,7 +48,7 @@
     <br>
     <br>
     
-    <style type="text/css">
+    <style>
         body {
             background: rgb(235, 235, 219, 1);
         }

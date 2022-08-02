@@ -18,7 +18,7 @@
           <a class="navbar-brand" href="{% url 'home' %}"> 
             <div class="d-flex flex-nowrap">
               <div class="order-1 p-2"></div>
-                  <img src=" {% static 'shoen\images\default_profile_pic.jpg' %} " class="rounded-circle" width=60 height=60>
+                  <img src=" {% static 'shoen\images\default_profile_pic.jpg' %} " class="rounded-circle" width=60 height=60 alt="Shoe'n profile picture">
             </div>
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,20 +30,20 @@
               <!-- Category Menu On The Nav Bar -->
             <!-- {% if user.is_authenticated %}
               {% if cat_menu %}
-                <!-- <li class="nav-item dropdown">
-                  <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> -->
+                <!- <li class="nav-item dropdown">
+                  <!- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> -->
                     
                     <!-- Category -->
-                  </a>
+                  <!-- </a> -->
                   <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown"> 
-                      <!-- {% for item in cat_menu %}
-                      <!-- <a class="dropdown-item" href="{% url 'category' item|slugify %}">{{ item }}</a> -->
+                      <!- {% for item in cat_menu %}
+                      <!- <a class="dropdown-item" href="{% url 'category' item|slugify %}">{{ item }}</a> -->
                       <!-- <a class="dropdown-item">{{ item }}</a> -->
                       <!--{% endfor %} 
                   </ul> -->
                 <!--</li> -->
               <!--{% else %}
-                  <!-- category-list -->
+                  <!- category-list -->
                     <!-- <li class="nav-item">
                       <a class="nav-link" href="{% url 'category-list' %}">Collection</a>
                     </li> -->
@@ -109,7 +109,7 @@
     <br>
     <div class="container">
         {% block content %}
-
+        
         {% endblock %}
     </div>
 

@@ -1,32 +1,33 @@
-{% extends 'base.html' %}
-{% block title %}Register{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"/>
+<title>Welcome To Shoe'N</title>
+    {% extends 'base.html' %}
+    {% load static %}
+    {% block title %}Register{% endblock %}
+    {% block content %}
+    <div class='text-center'>
+        <img src="{% static '\logo\image\logo2.jpg' %}" class="rounded mx-auto d-block" alt="shoe'n shoe logo">
+    </div>
 
-{% block content %}
-{% load static %}
+    <h3>Shoe'N RegistrY</h3>
 
+    <div class="form-group">    
+        <form  method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-secondary">Register</button>
+        </form>
+    </div>
+    <br><br>
 
-<div class='text-center'>
-    <img src="{% static '\logo\image\logo2.jpg' %}" class="rounded mx-auto d-block">
-</div>
+    <style>
+        body {
+            background: rgb(235, 235, 219, 1);
+        }
+    </style>
 
-<h3>Shoe'N RegistrY</h3>
+    {% endblock %}
 
-<div class="form-group">
-    <form  method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-secondary">Register</button>
-    </form>
-</div>
-<br><br>
+</html>
 
-
-
-
-<style type="text/css">
-body {
-    background: rgb(235, 235, 219, 1);
-}
-</style>
-
-{% endblock %}

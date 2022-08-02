@@ -1,9 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"/>
+<title>Welcome To Shoe'N</title>
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
 
-    <div class="header" >
+    <div class="header">
         <h1>{{ user }}'s Collection <STRONG># {{ shoe_count }}</STRONG></h1>
         {% if user.is_authenticated %}
             <!-- Messages Alert formatting here -->
@@ -13,11 +16,9 @@
                         <div class="alert alert-warning alert-dismissible fade show" role="alert">
                             <h4 class="alert-heading">Congrats!</h4>
                             <h3>
-                                <strong><p class="mb-80">{{ message }} 
+                                <strong><p class="mb-80">{{ message }}</p></strong>
                                 <!-- <img src=" {% static 'logo\image\Nice_Collection.jpg' %} "  width=80 height=90> -->
-                                </p></strong>
                             </h3>
-                            
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     </div>
@@ -32,7 +33,7 @@
                 <div class="card border-secondary mb-3" style="width: 400px;">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="{{ post.shoe_image.url }}" class="img-fluid rounded-start" alt="...">
+                            <img src="{{ post.shoe_image.url }}" class="img-fluid rounded-start" alt="Shoe'N picture of a shoe">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -40,21 +41,18 @@
                                 <p class="card-text"><h6>
                                     <a href="{% url 'article-detail' post.pk %}"> {{ post.shoe_in }}</a><br>
                                     {{ post.colaboration }}<br>
-                                    {{ post.color_scheme_1 }}, {{ post.color_scheme_2 }}, {{ post.color_scheme_3 }}</a></h6>
+                                    {{ post.color_scheme_1 }}, {{ post.color_scheme_2 }}, {{ post.color_scheme_3 }}</h6>
                                     <small class="text-muted">{{ post.post_date }}</small>
-                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
         </div>
         {% endfor %}
-
-<!-- <a href="{% url 'home' %}" class="btn btn-secondary">Home</a> -->
 <br>
 <br>
 
-<style type="text/css">
+<style>
     body {
         background: rgb(235, 235, 219, 1);
     }
@@ -64,11 +62,11 @@
         justify-content: center;
     } */
 
-    .container {
+    /* .container {
         display: flex;
         flex-direction: row; 
         flex-wrap: wrap;       
-    }
+    } */
 </style>
 
 <!-- Pagination Stuff -->
@@ -78,7 +76,7 @@ Has Next: {{ posts_list.has_next }}
 Current Page: {{ posts_list.number }}
 Number of Pages: {{ posts_list.paginator.num_pages }}-->
 
-<hr>
+
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
             {% if posts_list.has_previous %}

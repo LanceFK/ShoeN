@@ -26,8 +26,8 @@ def my_collection(request):
 # Collection counter
         if(shoe_count == 3):
             messages.success(request, ('NICE COLLECTION!'))
-            print('Nice Collection')
-        elif(shoe_count == 15):
+            print(str(shoe_count) + 'Nice Collection')
+        elif(shoe_count == 25):
             messages.success(request, ('COOL COLLECTION!'))
             print('Cool Collection')
         elif(shoe_count == 100):

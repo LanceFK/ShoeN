@@ -1,6 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"/>
+<title>Welcome To Shoe'N</title>
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
 
 
@@ -19,7 +22,7 @@
                 <div class="card border-secondary mb-3" style="max-width: 540px;" name="collection">
                     <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="{{ post.shoe_image.url }}" class="img-fluid rounded-start" alt="...">
+                        <img src="{{ post.shoe_image.url }}" class="img-fluid rounded-start" alt="Shoe'N picture of a shoe">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -64,7 +67,7 @@
 <br>
 <br>
 
-<style type="text/css">
+<style>
     body {
         background: rgb(235, 235, 219, 1);
     }

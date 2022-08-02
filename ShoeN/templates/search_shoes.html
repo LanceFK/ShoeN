@@ -1,6 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"/>
+<title>Welcome To Shoe'N</title>
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
 
     {% if searched %}
@@ -12,7 +15,7 @@
                     <div class="card border-secondary mb-3" style="width: 400px;">
                         <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="{{ post.shoe_image.url }}" class="img-fluid rounded-start" alt="...">
+                                <img src="{{ post.shoe_image.url }}" class="img-fluid rounded-start" alt="Shoe'N picture of a shoe">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
@@ -21,7 +24,7 @@
                                         <a href="{% url 'article-detail' post.pk %}">{{ post.shoe_in }}</a>
                                         <br>{{ post.colaboration }} 
                                         <br>
-                                        {{ post.color_scheme_1 }}, {{ post.color_scheme_2 }}, {{ post.color_scheme_3 }}</a>
+                                        {{ post.color_scheme_1 }}, {{ post.color_scheme_2 }}, {{ post.color_scheme_3 }}
                                         <br><small class="text-muted">By: {{ post.author }} - {{ post.post_date }}</small>
                                         <br/>
                                     </p>
@@ -36,7 +39,7 @@
         <h2>Is Your Shoe In?</h2>
     {% endif %} 
 
-<style type="text/css">
+<style>
     body {
         background: rgb(235, 235, 219, 1);
     }
@@ -44,17 +47,36 @@
 </style>
 
 <!-- Pagination Stuff -->
+<!-- {{ posts_list }}<br>
 
-<!-- Has Previous: {{ posts_list.has_previous }}<br>
+Has Previous: {{ posts_list.has_previous }}<br>
 Has Next: {{ posts_list.has_next }}
 Current Page: {{ posts_list.number }}
 Number of Pages: {{ posts_list.paginator.num_pages }}
-<hr><br> --> 
+<br><br> -->
 
+<!-- <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center"> -->
+            <!-- {% if posts_list.has_previous %}
+                <a href="?page=1">&laquo First</a>
+                <a href="?page={{ posts_list.previous_page_number }}">Previous</a>
+            {% endif %}
+ -->
+            <!-- Page {{ posts_list.number }} of {{ posts_list.paginator.num_pages }} -->
 
+            <!-- {%  for i in nums %}
+                <li class="page-item"><a class="page-link" href="?page={{ forloop.counter }}">{{ forloop.counter }}</a></li>
+            {% endfor %}
+ -->
+            <!-- {% if posts_list.has_next %}
+                <a href="?page={{ posts_list.next_page_number }}">Next</a>
+                <a href="?page={{ posts_list.paginator.num_pages }}">Last &raquo</a>
+            {% endif %}
+            <br><br><br> -->
+    <!-- </ul>
+</nav> -->
 
-
-
+<hr><br><br>
 
 
 {% endblock %}

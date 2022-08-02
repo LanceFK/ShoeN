@@ -1,18 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"/>
+<title>Welcome To Shoe'N</title>
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
 
         <div class="d-flex flex-nowrap">
             {% if post.author.profile.profile_pic %}
                 <div class="order-1 p-2">
                         <div class="container" name="article_bio">
-                            <img src=" {{ post.author.profile.profile_pic.url }} " class="rounded-circle" width=150 height=150>
+                            <img src=" {{ post.author.profile.profile_pic.url }} " class="rounded-circle" width=150 height=150 alt="Shoe'n profile picture">
                         </div>
                 </div>
                 <br><br/>
             {% else %}
-                <img src=" {% static 'shoen\images\default_profile_pic.jpg' %} " class="rounded-circle" width=150 height=150>
+                <img src=" {% static 'shoen\images\default_profile_pic.jpg' %} " class="rounded-circle" width=150 height=150 alt="Shoe'n profile picture">
                 <br><br/>
             {% endif %}
                 <div class="order-2 p-2">
@@ -34,18 +37,20 @@
         <div class="row g-0">
             <div class="col-md-4">
             {% if post.shoe_image %}
-                <img src="{{ post.shoe_image.url }}" class="img-thumbnail">
+                <img src="{{ post.shoe_image.url }}" class="img-thumbnail" alt="Shoe'N picture of a shoe">
             {% endif %}
             </div>
             <div class="col-md-8">
             <div class="card-body">
                 <h5 class="card-title">{{ post.title }}</h5>
                 <p class="medium text-muted">
-                    {% if user.is_authenticated %}
+
+                <!-- User Collection can be viewed here, need to connect other users -->
+                    <!-- {% if user.is_authenticated %}
                         <a href="{% url 'my_collection' %}">
                             <img src=" {% static 'shoen\images\default_profile_pic.jpg' %} " class="rounded-circle" width=25 height=25>
                         </a>|
-                    {% endif %}
+                    {% endif %} -->
                     
                     {% if post.author.profile.website_url %}
                         <a href="{{ post.author.profile.website_url  }}" class="fa fa-linkedin"></a>
@@ -97,9 +102,9 @@
             {% csrf_token %}
             {% if user.is_authenticated %}
                 {% if liked %}
-                    <button type='submit', name='post_id', value="{{ post.id }}", class="btn btn-warning btn-sm">UnNod!</button> 
+                    <button type='submit' name='post_id' value="{{ post.id }}" class="btn btn-warning btn-sm">UnNod!</button> 
                 {% else %}
-                    <button type='submit', name='post_id', value="{{ post.id }}", class="btn btn-info btn-sm">Nod!</button> 
+                    <button type='submit' name='post_id' value="{{ post.id }}" class="btn btn-info btn-sm">Nod!</button> 
                 {% endif %}
             {% else %}
                 <STRONG><large>Login to Nod!</large></STRONG>
@@ -113,10 +118,10 @@
     <br>
 
 
-<style type="text/css">
-body {
-    background: rgb(235, 235, 219, 1);
-}
+<style>
+    body {
+        background: rgb(235, 235, 219, 1);
+    }
 </style>
         
 

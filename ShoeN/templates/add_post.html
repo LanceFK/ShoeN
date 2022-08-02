@@ -1,7 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"/>
+<title>Welcome To Shoe'N</title>
 {% extends 'base.html' %}
-
 {% block content %}
 
+<small class="text-muted">(Posting Messages Is Optional)</small>
 
 {% if user.is_authenticated %}
     <div action="counter" class="form-group">
@@ -9,7 +13,7 @@
             {% csrf_token %}
             {{ form.media }}
             {{ form.as_p }}  
-            <button class="btn btn-secondary">Post</button>
+            <button class="btn btn-secondary">Add Shoe</button>
         </form>
     </div>
 
@@ -27,7 +31,7 @@
 {% endif %}
 
 
-<style type="text/css">
+<style>
     body {
         background: rgb(235, 235, 219, 1);
     }

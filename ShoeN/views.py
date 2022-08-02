@@ -6,20 +6,28 @@ from .forms import PostForm, EditForm
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
+# Pagination here
+from django.core.paginator import Paginator
 
 # Create your views here.
 # def home(request):
 #     return render(request, 'home.html', {})
 
-# Search Bar results
+# Search Bar 
 def search_shoes(request):
     if request.method == 'POST':
         searched = request.POST.get('searched')
         posts = Post.objects.filter(category__icontains=searched)
 
+        # Pagination set up
+        p = Paginator(Post.objects.filter(category__icontains=searched).order_by('category'), 5)
+        page = request.GET.get('page')
+        posts_list = p.get_page(page)
+
         return render(request,'search_shoes.html',
         {'searched':searched.title(),
-        'posts':posts})
+        'posts':posts,
+        'posts_list':posts_list})
     else:
         return render(request,'search_shoes.html',
         {})
