@@ -7,16 +7,17 @@
 
 
 {% if user.is_authenticated %}
-    <div class="form-group">
-        <form  method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button class="btn btn-secondary">Add
-                
-            </button>
-        </form>
+    <div class="container">
+        <div class="form-group">
+            <form  method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn btn-secondary">Add
+                    
+                </button>
+            </form>
+        </div>
     </div>
-
 {% else %}
     <STRONG>Please Login to Shoe'N!</STRONG>
 {% endif %}

@@ -5,31 +5,31 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<small class="text-muted">(Posting Messages Is Optional)</small>
+<div class="container">
+    <small class="text-muted">(Posting Messages Is Optional)</small>
+    {% if user.is_authenticated %}
+        <div action="counter" class="form-group">
+            <form  method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form.as_p }}  
+                <button class="btn btn-secondary">Add Shoe</button>
+            </form>
+        </div>
 
-{% if user.is_authenticated %}
-    <div action="counter" class="form-group">
-        <form  method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.media }}
-            {{ form.as_p }}  
-            <button class="btn btn-secondary">Add Shoe</button>
-        </form>
-    </div>
+        <br>
+        <!-- <a href="{% url 'home' %}" class="btn btn-secondary">Back</a> -->
+        <br><br>
 
-    <br>
-    <!-- <a href="{% url 'home' %}" class="btn btn-secondary">Back</a> -->
-    <br><br>
+        <script>
+            var name = '{{ user.id }}';
+            document.getElementById('phil').value = name;
+        </script>
 
-    <script>
-        var name = '{{ user.id }}';
-        document.getElementById('phil').value = name;
-    </script>
-
-{% else %}
-    Please Login to Shoe'N!
-{% endif %}
-
+    {% else %}
+        Please Login to Shoe'N!
+    {% endif %}
+</div>
 
 <style>
     body {

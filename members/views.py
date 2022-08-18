@@ -26,19 +26,23 @@ def my_collection(request):
 # Collection counter
         if(shoe_count == 3):
             messages.success(request, ('NICE COLLECTION!'))
-            print(str(shoe_count) + 'Nice Collection')
+            print(str(shoe_count) + ': NICE COLLECTION!')
+
         elif(shoe_count == 25):
             messages.success(request, ('COOL COLLECTION!'))
-            print('Cool Collection')
+            print(str(shoe_count) + ': COOL COLLECTION!')
+
         elif(shoe_count == 100):
             messages.success(request, ('DOPE COLLECTION!'))
-            print('Dope Collection')
+            print(str(shoe_count) + ': DOPE COLLECTION!')
+
         elif(shoe_count == 500):
             messages.success(request, ('SUPREME CLIENTELE!'))
-            print('Supreme Clientele')
+            print(str(shoe_count) + ': SUPREME CLIENTELE!')
+
         elif(shoe_count == 2755):
             messages.success(request, ("SHOELLIONAIRE STATUS!"))
-            print('Shoellionaire Status')
+            print(str(shoe_count) + ': SHOELLIONAIRE STATUS!')
 
         # Pagination setup 
         p = Paginator(Post.objects.filter(author=me).order_by('category'),25 )

@@ -6,7 +6,7 @@
 {% load static %}
 {% block content %}
 
-    <div class="header">
+    <div class="container" id="header">
         <h1>{{ user }}'s Collection <STRONG># {{ shoe_count }}</STRONG></h1>
         {% if user.is_authenticated %}
             <!-- Messages Alert formatting here -->
@@ -14,7 +14,7 @@
                 {% for message in messages %}
                     <div class="success">
                         <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            <h4 class="alert-heading">Congrats!</h4>
+                            <h4 class="alert-heading">Congratulations</h4>
                             <h3>
                                 <strong><p class="mb-80">{{ message }}</p></strong>
                                 <!-- <img src=" {% static 'logo\image\Nice_Collection.jpg' %} "  width=80 height=90> -->
@@ -29,24 +29,24 @@
     </div>
 
         {% for post in posts_list %}
-        <div class="container" id="collection">
-                <div class="card border-secondary mb-3" style="width: 400px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="{{ post.shoe_image.url }}" class="img-fluid rounded-start" alt="Shoe'N picture of a shoe">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ post.category }}</h5>
-                                <p class="card-text"><h6>
-                                    <a href="{% url 'article-detail' post.pk %}"> {{ post.shoe_in }}</a><br>
-                                    {{ post.colaboration }}<br>
-                                    {{ post.color_scheme_1 }}, {{ post.color_scheme_2 }}, {{ post.color_scheme_3 }}</h6>
-                                    <small class="text-muted">{{ post.post_date }}</small>
-                            </div>
+        <div class="container">
+            <div class="card border-secondary mb-3" style="width: 500px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{ post.shoe_image.url }}" class="img-fluid rounded-start" alt="Shoe'N picture of a shoe">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ post.category }}</h5>
+                            <p class="card-text"><h6>
+                                <a href="{% url 'article-detail' post.pk %}"> {{ post.shoe_in }}</a><br>
+                                {{ post.colaboration }}<br>
+                                {{ post.color_scheme_1 }}, {{ post.color_scheme_2 }}, {{ post.color_scheme_3 }}</h6>
+                                <small class="text-muted">{{ post.post_date }}</small>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
         {% endfor %}
 <br>

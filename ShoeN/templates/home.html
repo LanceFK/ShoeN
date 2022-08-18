@@ -6,6 +6,7 @@
 {% load static %}
 {% block content %}
 <br>
+<div class="container">
         <ul>
     {% for post in object_list %}   
         <div class="card border-secondary mb-3" style="max-width: 800px;">
@@ -35,7 +36,7 @@
         </div>
     {% endfor %}
         </ul>
-
+</div>
 
 <style>
 body {

@@ -6,7 +6,7 @@
 {% load static %}
 {% block content %}
 
-
+<div class="container">
     {% if user.is_authenticated %}
         {% if user.id == profile.user.id %}
             <div><h2>Update Profile</h2><small class="text-muted">(Please Enter Social Media Links To Keep Us Connected)</small></div>
@@ -29,7 +29,7 @@
         {% else %}
             This Isn't Your Profile!
         {% endif %}
-
+</div>
 
 <style>
     body {

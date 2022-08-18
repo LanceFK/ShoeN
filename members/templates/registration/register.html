@@ -10,16 +10,17 @@
         <img src="{% static '\logo\image\logo2.jpg' %}" class="rounded mx-auto d-block" alt="shoe'n shoe logo">
     </div>
 
-    <h3>Shoe'N RegistrY</h3>
-
-    <div class="form-group">    
-        <form  method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button class="btn btn-secondary">Register</button>
-        </form>
+    <div class="container">
+        <h3>Shoe'N RegistrY</h3>
+        <div class="form-group">    
+            <form  method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn btn-secondary">Register</button>
+            </form>
+        </div>
     </div>
-    <br><br>
+        <br><br>
 
     <style>
         body {

@@ -6,10 +6,10 @@
 {% load static %}
 {% block content %}
 
+<div class="container">
     {% if searched %}
         <h4>Searched For {{ searched }}</h4>
         <hr>
-
             {% for post in posts %}
                 <div class="container">
                     <div class="card border-secondary mb-3" style="width: 400px;">
@@ -36,9 +36,9 @@
             {% endfor %}
         <br>    
     {% else %}
-        <h2>Is Your Shoe In?</h2>
+        <h4>Is Your Shoe In?</h4>
     {% endif %} 
-
+</div>
 <style>
     body {
         background: rgb(235, 235, 219, 1);
