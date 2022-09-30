@@ -36,6 +36,9 @@ def search_shoes(request):
 def index(request):
     return render(request, 'hangman.html')
 
+def shoen_meta(request):
+    return render(request, 'shoen_meta.html')
+
 def LikeView(request, pk):
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
     liked = False

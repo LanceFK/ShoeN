@@ -9,7 +9,7 @@
 <div class="container">
     {% if user.is_authenticated %}
         {% if user.id == profile.user.id %}
-            <div><h2>Update Profile</h2><small class="text-muted">(Please Enter Social Media Links To Keep Us Connected)</small></div>
+            <div><h2>Update Profile</h2><small class="text-muted">(To Keep Us Connected Please Enter Social Media Links)</small></div>
             
             <div class="form-group">
                 <form  method="POST" enctype="multipart/form-data">
