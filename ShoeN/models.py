@@ -4,7 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from datetime import datetime, date 
-from ckeditor.fields import RichTextField 
+# from ckeditor.fields import RichTextField
 
 class Category(models.Model):
     name = models.CharField(max_length=255)
@@ -41,12 +41,12 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     shoe_image = models.ImageField(null=False, blank=False, upload_to='images/')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    body = RichTextField(blank=True, null=True)
-    # body = models.TextField(null=True, blank=True, max_length=255)
+    # body = RichTextField(blank=True, null=True)
+    body = models.TextField(null=True, blank=True, max_length=255)
     post_date = models.DateField(auto_now_add=True)
     category = models.CharField(max_length=255, default='select_shoe')
     shoe_in = models.CharField(max_length=255)
-    colaboration = models.CharField(max_length=255)
+    colaboration = models.CharField(null=True, blank=True, max_length=255)
     color_scheme_1 = models.CharField(max_length=255)
     color_scheme_2 = models.CharField(max_length=255)
     color_scheme_3 = models.CharField(max_length=255)

@@ -6,12 +6,11 @@
 {% block content %}
 
 <div class="container">
-    <small class="text-muted">(Posting Messages Optional)</small>
+    <small class="text-muted">(Posting Messages Is Optional)</small>
     {% if user.is_authenticated %}
         <div action="counter" class="form-group">
             <form  method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                <!-- {{ form.media }} -->
                 {{ form.as_p }}  
                 <button class="btn btn-secondary">Add Shoe</button>
             </form>
