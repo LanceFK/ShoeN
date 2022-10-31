@@ -20,8 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = os.getenv('SECRET_KEY')
-SECRET_KEY = 'db#qw&u_wf8b6gq9p15u-qz5hdq6dgrd_hnj3-k2=+w99x))7m'
+SECRET_KEY = os.getenv.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -86,7 +85,7 @@ DATABASES = {
         'NAME': 'django',
         'HOST': "shoen-cloud-db.postgres.database.azure.com",
         'USER': 'django@shoen-cloud-db',
-        'PASSWORD':  os.getenv.get('PASSWORD'), #'Nep-Tunes!00',
+        'PASSWORD':  os.getenv.get('PASSWORD'), 
         'PORT': '5432',
         'OPTIONS': {'sslmode': 'require'},
     }
