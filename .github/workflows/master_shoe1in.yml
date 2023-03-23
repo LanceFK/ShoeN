@@ -10,6 +10,9 @@ on:
       - master
   workflow_dispatch:
 
+env:
+  WEBAPP_NAME: 'shoe1in'  # Replace with the name of your Azure web app
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,13 +27,18 @@ jobs:
 
       - name: Create and start virtual environment
         run: |
-          python -m venv venv
-          source venv/bin/activate
+          python -m venv antenv
+          source antenv/bin/activate
       
       - name: Install dependencies
         run: pip install -r requirements.txt
+
+      - name: Collect static
+        run: python manage.py collectstatic
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
+      - name: Run tests
+        run: python manage.py test
       
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v2
@@ -53,6 +61,12 @@ jobs:
         with:
           name: python-app
           path: .
+
+      - name: Disable static collection and set migration command on App Service
+        uses: Azure/appservice-settings@v1
+        with:  
+          app-name: 'shoe1in'
+          app-settings-json: '[{ "name": "DISABLE_COLLECTSTATIC", "value": "true" }, { "name": "POST_BUILD_COMMAND",  "value": "python manage.py makemigrations && python manage.py migrate" }, { "name": "SCM_DO_BUILD_DURING_DEPLOYMENT", "value": "true" }, { "name": "DJANGO_ENV", "value": "production"}]'
           
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
