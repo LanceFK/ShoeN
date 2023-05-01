@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 env:
-  WEBAPP_NAME: 'shoe1in'  # Replace with the name of your Azure web app
+  AZURE_WEBAPP_NAME: shoe1in  # Replace with the name of your Azure web app
 
 jobs:
   build:
@@ -58,16 +58,11 @@ jobs:
           name: python-app
           path: .
 
-      # - name: Disable static collection and set migration command on App Service
-      #   uses: Azure/appservice-settings@v1
-      #   with:  
-      #     app-name: 'shoe1in'
-      #     app-settings-json: '[{ "name": "DISABLE_COLLECTSTATIC", "value": "true" }, { "name": "POST_BUILD_COMMAND",  "value": "python manage.py makemigrations && python manage.py migrate" }, { "name": "SCM_DO_BUILD_DURING_DEPLOYMENT", "value": "true" }, { "name": "DJANGO_ENV", "value": "production"}]'
           
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'shoe1in'
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A23E8A68918047A79B8405609480D788 }}
