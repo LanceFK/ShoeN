@@ -41,7 +41,7 @@ jobs:
           name: python-app
           path: |
             . 
-            !venv/
+            !antenv/
 
   deploy:
     runs-on: ubuntu-latest
