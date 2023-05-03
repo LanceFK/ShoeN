@@ -59,14 +59,14 @@ jobs:
           path: .
 
       - uses: azure/docker-login@v1
-      with:
-        login-server: acrshoen.azurecr.io
-        username: ${{ secrets.REGISTRY_USERNAME }}
-        password: ${{ secrets.REGISTRY_PASSWORD }}
+        with:
+          login-server: acrshoen.azurecr.io
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
 
-    - run: |
-        docker build . -t acrshoen.azurecr.io/shoe1in:${{ github.sha }}
-        docker push acrshoen.azurecr.io/shoe1in:${{ github.sha }}     
+      - run: |
+          docker build . -t acrshoen.azurecr.io/shoe1in:${{ github.sha }}
+          docker push acrshoen.azurecr.io/shoe1in:${{ github.sha }}     
           
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
