@@ -4,7 +4,7 @@
 
 name: Build and deploy Python app to Azure Web App - shoe1in
 
-on:
+on: [push]
   push:
     branches:
       - master
@@ -58,6 +58,15 @@ jobs:
           name: python-app
           path: .
 
+      - uses: azure/docker-login@v1
+      with:
+        login-server: acrshoen.azurecr.io
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
+
+    - run: |
+        docker build . -t acrshoen.azurecr.io/shoe1in:${{ github.sha }}
+        docker push acrshoen.azurecr.io/shoe1in:${{ github.sha }}     
           
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
@@ -66,3 +75,4 @@ jobs:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A23E8A68918047A79B8405609480D788 }}
+          images: 'acrshoen.azurecr.io/shoe1in:${{ github.sha }}'
