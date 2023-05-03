@@ -71,7 +71,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: shoe1in
+          app-name: 'shoe1in'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A23E8A68918047A79B8405609480D788 }}
           images: 'acrshoen.azurecr.io/shoe1in:${{ github.sha }}'
