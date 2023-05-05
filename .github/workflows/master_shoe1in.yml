@@ -4,7 +4,7 @@
 
 name: Build and deploy Python app to Azure Web App - shoe1in
 
-on: 
+on: push
   push:
     branches:
       - master
