@@ -4,8 +4,13 @@
 
 name: Build and deploy Python app to Azure Web App - shoe1in
 
+<<<<<<< HEAD
 on:
   push:
+=======
+on: 
+  push: 
+>>>>>>> 7bcd3abe940dd4b542851dde98a258ae7bb4a311
     branches:
       - master
   workflow_dispatch:
