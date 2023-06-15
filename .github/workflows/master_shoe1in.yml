@@ -59,13 +59,18 @@ jobs:
         with:
           name: python-app
           path: .
-
+      
+      - uses: actions/checkout@v2
       - uses: azure/docker-login@v1
         with:
           login-server: acrshoen.azurecr.io
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
-
+      - uses: azure/docker-login@v1
+        with:
+          login-server: index.docker.io
+          username: ${{ secrets.DOCKERIO_USERNAME }}
+          password: ${{ secrets.DOCKERIO_PASSWORD }}
       - run: |
           docker build . -t acrshoen.azurecr.io/shoe1in:${{ github.sha }}
           docker push acrshoen.azurecr.io/shoe1in:${{ github.sha }}     
