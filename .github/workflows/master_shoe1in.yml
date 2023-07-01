@@ -10,7 +10,8 @@ on:
       - master
   workflow_dispatch:
 
-
+env:
+  AZURE_WEBAPP_NAME: shoe1in  # Replace with the name of your Azure web app
 
 jobs:
   build:
