@@ -30,7 +30,7 @@ jobs:
 
       - name: Create and start virtual environment
         run: |
-          python -m venv venv
+          python -m venv antenv
           source venv/bin/activate
       
       - name: Install dependencies
