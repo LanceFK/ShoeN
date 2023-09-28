@@ -27,6 +27,7 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.9'
+          cache: 'pip'
 
       - name: Create and start virtual environment
         run: |
@@ -80,7 +81,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: ${{ env.AZURE_WEBAPP_NAME}}
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A23E8A68918047A79B8405609480D788 }}
           images: 'acrshoen.azurecr.io/shoe1in:${{ github.sha }}'
