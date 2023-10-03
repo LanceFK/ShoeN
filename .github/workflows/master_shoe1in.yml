@@ -19,6 +19,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - run: |
+          date > generated.txt
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "generated"
+          git push
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
@@ -64,19 +71,26 @@ jobs:
           path: .
       
       - uses: actions/checkout@v2
+      - run: |
+          date > generated.txt
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "generated"
+          git push
       - uses: azure/docker-login@v1
         with:
           login-server: acrshoen.azurecr.io
-          username: ${{ secrets.REGISTRY_USERNAME }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
       - uses: azure/docker-login@v1
         with:
           login-server: index.docker.io
           username: ${{ secrets.DOCKERIO_USERNAME }}
           password: ${{ secrets.DOCKERIO_PASSWORD }}
       - run: |
-          docker build . -t acrshoen.azurecr.io/shoe1in:${{ github.sha }}
-          docker push acrshoen.azurecr.io/shoe1in:${{ github.sha }}     
+          docker pull acrshoen.azurecr.io/private/image:latest
+          docker pull private/image:latest
           
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
