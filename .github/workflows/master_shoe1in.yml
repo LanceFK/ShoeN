@@ -34,7 +34,7 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-          cache: 'pip' # caching pip dependencies
+          cache: '**/requirements.txt' # caching pip dependencies
       - run: pip install -r requirements.txt
 
       - name: Create and start virtual environment
