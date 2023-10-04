@@ -26,11 +26,9 @@ jobs:
           git add .
           git commit -m "generated"
           git push
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - run: npm install
-      - run: npm test
 
       - name: Set up Python version
         uses: actions/setup-python@v4
