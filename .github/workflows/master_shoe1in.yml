@@ -29,12 +29,15 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
+          cache: 'npm'
+      - run: npm install
+      - run: npm test
 
       - name: Set up Python version
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-          cache: '**/pyproject.toml' # caching pip dependencies
+          cache: 'pip' # caching pip dependencies
       - run: pip install -r requirements.txt
 
       - name: Create and start virtual environment
