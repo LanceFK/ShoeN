@@ -84,28 +84,28 @@ WSGI_APPLICATION = 'newProj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'shoe1in-database',
-        'HOST': 'localhost',
-        'USER': 'postgres',
-        'PASSWORD': 'neptunes!$007', 
-        'PORT': '5432',
-    }
-}
-
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': os.environ.get("NAME"),
-#         'HOST': os.environ.get("HOST"),
-#         'USER': os.environ.get("USER"),
-#         'PASSWORD':  os.environ.get("PASSWORD"), 
+#         'NAME': 'shoe1in-database',
+#         'HOST': 'localhost',
+#         'USER': 'postgres',
+#         'PASSWORD': 'neptunes!$007', 
 #         'PORT': '5432',
-#         # 'OPTIONS': {'sslmode': 'require'},
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get("NAME"),
+        'HOST': os.environ.get("HOST"),
+        'USER': os.environ.get("USER"),
+        'PASSWORD':  os.environ.get("PASSWORD"), 
+        'PORT': '5432',
+        # 'OPTIONS': {'sslmode': 'require'},
+    }
+}
 
 
 # Old DataBase Setup
