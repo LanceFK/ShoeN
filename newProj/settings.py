@@ -84,16 +84,6 @@ WSGI_APPLICATION = 'newProj.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'shoe1in-database',
-#         'HOST': 'localhost',
-#         'USER': 'postgres',
-#         'PASSWORD': 'neptunes!$007', 
-#         'PORT': '5432',
-#     }
-# }
 
 DATABASES = {
     'default': {
