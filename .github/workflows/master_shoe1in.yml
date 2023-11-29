@@ -70,7 +70,7 @@ jobs:
           name: python-app
           path: .
       
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - run: |
           date > generated.txt
           git config user.name github-actions
