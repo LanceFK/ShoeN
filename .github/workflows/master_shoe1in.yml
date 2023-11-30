@@ -93,7 +93,7 @@ jobs:
           username: ${{ secrets.DOCKERIO_USERNAME }}
           password: ${{ secrets.DOCKERIO_PASSWORD }}
       - run: |
-          docker pull acrshoen.azurecr.io/shoe1in:${{ github.sha }}
+          docker build . -t acrshoen.azurecr.io/shoe1in:${{ github.sha }}
           docker push acrshoen.azurecr.io/shoe1in:${{ github.sha }}
           
       - name: 'Deploy to Azure Web App'
