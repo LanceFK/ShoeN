@@ -93,7 +93,7 @@ DATABASES = {
         'USER': os.environ.get("USER"),
         'PASSWORD':  os.environ.get("PASSWORD"), 
         'PORT': '5432',
-        # 'OPTIONS': {'sslmode': 'require'},
+        'OPTIONS': {'sslmode': 'require'},
     }
 }
 
