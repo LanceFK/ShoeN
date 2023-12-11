@@ -1,4 +1,4 @@
-FROM acrshoen.azurecr.io/shoe1in:latest
+FROM acrshoen.azurecr.io/shoe1in:alpine
 
 RUN pip install -r requirements.txt 
 
