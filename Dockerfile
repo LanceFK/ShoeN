@@ -1,11 +1,12 @@
-FROM acrshoen.azurecr.io/shoe1in:alpine
+FROM alpine:3.10
 
-RUN pip install -r requirements.txt 
+# RUN pip install -r requirements.txt 
 
-COPY . .
+COPY entrypoint.sh /entrypoint.sh
 
-ADD requirements.txt /code/
+# ADD requirements.txt /code/
 
-WORKDIR /app
+# WORKDIR /app
+ENTRYPOINT ["/entrypoint.sh"]
 
 CMD [ "executable" ]
