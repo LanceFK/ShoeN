@@ -10,7 +10,7 @@ WORKDIR /app
 # ENTRYPOINT ["/entrypoint.sh"]
 
 CMD [ "executable" ]
-FROM ubuntu:latest
+FROM ubuntu:20
 WORKDIR /app
 ADD . /app
 RUN set -xe \
