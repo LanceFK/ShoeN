@@ -6,7 +6,7 @@ COPY . .
 
 ADD requirements.txt /code/
 
-# WORKDIR /app
-ENTRYPOINT ["/entrypoint.sh"]
+WORKDIR /app
+# ENTRYPOINT ["/entrypoint.sh"]
 
-# CMD [ "executable" ]
+CMD [ "executable" ]
