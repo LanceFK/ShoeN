@@ -1,5 +1,5 @@
 FROM node:18-alpine3.19
 COPY . /src
 RUN cd /src
-EXPOSE 5432
+EXPOSE 8080
 CMD ["node", "/src/server.js"]
