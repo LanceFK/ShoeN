@@ -32,13 +32,6 @@ jobs:
           cache: 'pip' # caching pip dependencies
       - run: pip install -r requirements.txt
 
-      # - name: Set up Python version
-      #   uses: actions/setup-python@v5
-      #   with:
-      #     python-version: '3.11'
-      #     cache: 'pip' # caching pip dependencies
-      # - run: pip install -r requirements.txt
-
       - name: Create and start virtual environment
         run: |
           python -m venv venv
