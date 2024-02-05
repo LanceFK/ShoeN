@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"/>
+<title>Welcome To Shoe'N</title>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="container">
+        <div class="d-flex flex-nowrap">
+            {% if post.author.profile.profile_pic %}
+                <div class="order-1 p-2">
+                        <div class="container" name="article_bio">
+                            <img src=" {{ post.author.profile.profile_pic.url }} " class="rounded-circle" width=150 height=150 alt="Shoe'n profile picture">
+                        </div>
+                </div>
+                <br>
+            {% else %}
+                <img src=" {% static 'shoen\images\default_profile_pic.jpg' %} " class="rounded-circle" width=150 height=150 alt="Shoe'n profile picture">
+                <br>
+            {% endif %}
+                <div class="order-2 p-2">
+                    <div><p class="text-sm-start">{{ post.author.profile.bio }}</p></div>
+                </div>            
+        </div>
+    <!-- <small>
+        By: {{ post.author }} - {{ post.post_date }} 
+        {% if user.is_authenticated %}
+            {% if user.id == post.author.id %}
+                <a href="{% url 'update_post' post.pk %}">(Edit)</a>
+                <a href="{% url 'delete_post' post.pk %}">(Delete)</a>
+            {% endif %}
+        {% endif %}
+    </small><br> -->
+
+    <div class="card border-secondary mb-3" style="max-width: 800px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+            {% if post.shoe_image %}
+                <img src="{{ post.shoe_image.url }}" class="img-thumbnail" alt="Shoe'N picture of a shoe">
+            {% endif %}
+            </div>
+            <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="medium text-muted">
+
+                <!-- User Collection can be viewed here, need to connect other users -->
+                    <!-- {% if user.is_authenticated %}
+                        <a href="{% url 'my_collection' %}">
+                            <img src=" {% static 'shoen\images\default_profile_pic.jpg' %} " class="rounded-circle" width=25 height=25>
+                        </a>|
+                    {% endif %} -->
+                    
+                    {% if post.author.profile.website_url %}
+                        <a href="{{ post.author.profile.website_url  }}" class="fa fa-linkedin"></a>
+                    {% endif %}
+
+                    {% if post.author.profile.instagram_url %}
+                        | <a href="{{ post.author.profile.instagram_url }}" class="fa fa-instagram"></a>
+                    {% endif %}
+
+                    {% if post.author.profile.meta_url %}
+                        | <a href="{{ post.author.profile.meta_url }}" class="fa fa-facebook"></a>
+                    {% endif %}
+
+                    {% if post.author.profile.twitter_url %}
+                        | <a href="{{ post.author.profile.twitter_url }}" class="fa fa-twitter"></a>
+                    {% endif %}
+
+                    {% if post.author.profile.pinterest_url %}
+                        | <a href="{{ post.author.profile.pinterest_url }}" class="fa fa-pinterest"></a>
+                    {% endif %}
+
+                    {% if post.author.profile.soundcloud_url %}
+                        | <a href="{{ post.author.profile.soundcloud_url }}" class="fa fa-soundcloud"></a>
+                    {% endif %}
+
+                    {% if post.author.profile.snapchat_url %}
+                        | <a href="{{ post.author.profile.snapchat_url }}" class="fa fa-snapchat"></a>
+                    {% endif %}
+
+                    {% if post.author.profile.youtube_url %}
+                        | <a href="{{ post.author.profile.youtube_url }}" class="fa fa-youtube"></a>
+                    {% endif %}
+                </p>
+                <p class="card-text">{{ post.body|safe }}</p>
+                <p class="card-text"><medium class="text-muted">By: {{ post.author }} - {{ post.post_date }}</medium></p>
+                    {% if user.is_authenticated %}
+                        {% if user.id == post.author.id %}
+                            <a href="{% url 'update_post' post.pk %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Edit</a>
+                            <a href="{% url 'delete_post' post.pk %}" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Delete</a>
+                        {% endif %}
+                    {% endif %}
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <form action="{% url 'like_post' post.pk %}" method="POST">
+            {% csrf_token %}
+            {% if user.is_authenticated %}
+                {% if liked %}
+                    <button type='submit' name='post_id' value="{{ post.id }}" class="btn btn-warning btn-sm">UnNod!</button> 
+                {% else %}
+                    <button type='submit' name='post_id' value="{{ post.id }}" class="btn btn-info btn-sm">Nod!</button>
+                {% endif %}
+            {% else %}
+                <STRONG><large>Login to Nod!</large></STRONG>
+            {% endif %}
+                <STRONG>- {{ total_likes }}</STRONG>
+        </form>
+    </div>
+    <br>
+    <!-- <a href="{% url 'home' %}" class="btn btn-secondary">Home</a> -->
+    <br>
+    <br>
+</div>
+
+<style>
+    body {
+        background: rgb(235, 235, 219, 1);
+    }
+</style>
+        
+
+{% endblock %}
