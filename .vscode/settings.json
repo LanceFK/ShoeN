@@ -1,0 +1,5 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/3c559c84-36ed-435e-acef-cb53a1ede4fa/AppServices/subscriptions/3c559c84-36ed-435e-acef-cb53a1ede4fa/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/shoe1in",
+    "appService.deploySubpath": ".",
+    "azureFunctions.scmDoBuildDuringDeployment": true
+}
