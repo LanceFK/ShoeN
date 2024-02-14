@@ -48,7 +48,7 @@ jobs:
         # We add makemigrations and migrate to run our model/database migrations
       - name: Make migrations and run migrations
         run: |
-          python manag.py makemigrations --empty polls
+          python manage.py makemigrations --empty polls
           python manage.py migrate polls
 
         # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
