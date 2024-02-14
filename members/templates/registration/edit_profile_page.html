@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"/>
+<title>Welcome To Shoe'N</title>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    {% if user.is_authenticated %}
+        {% if user.id == profile.user.id %}
+            <div><h2>Update Profile</h2><small class="text-muted">(To Keep Us Connected Please Enter Social Media Links)</small></div>
+            
+            <div class="form-group">
+                <form  method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}  
+                    <button class="btn btn-secondary">Update</button>
+                </form>
+            </div>
+
+            <br>
+            <!-- <a href="{% url 'home' %}" class="btn btn-secondary">Back</a> -->
+
+    {% else %}
+        Please Login to Shoe'N!
+    {% endif %}
+
+        {% else %}
+            This Isn't Your Profile!
+        {% endif %}
+</div>
+
+<style>
+    body {
+        background: rgb(235, 235, 219, 1);
+    }
+</style>
+        
+
+{% endblock %}
