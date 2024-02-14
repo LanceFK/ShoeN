@@ -45,10 +45,6 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-        # We add collectstatic to take care of our static files during the Actions run
-      - name: Collect static
-        run: python manage.py collectstatic --no-input
-
         # We add makemigrations and migrate to run our model/database migrations
       - name: Make migrations and run migrations
         run: |
