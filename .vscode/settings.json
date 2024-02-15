@@ -1,4 +1,5 @@
 {
     "appService.defaultWebAppToDeploy": "/subscriptions/3c559c84-36ed-435e-acef-cb53a1ede4fa/resourceGroups/shoen-postgres/providers/Microsoft.Web/sites/shoe1in",
-    "appService.deploySubpath": "."
+    "appService.deploySubpath": ".",
+    "C_Cpp.errorSquiggles": "enabled"
 }
