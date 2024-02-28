@@ -1,4 +1,4 @@
-from setuptools import setup, find_namespace_packages
+from setuptools import setup, greenlet
 
 setup(
     
@@ -6,6 +6,6 @@ setup(
     version='1.0',
     author='Lance F Kinchen',
     author_email='lfk2682@gmail.com',
-    packages='find_namespace_packages()',
+    packages='greenlet',
     
 )
