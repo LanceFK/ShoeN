@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"/>
+<title>Welcome To Shoe'N</title>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<div class="container">
+        <ul>
+    {% for post in object_list %}   
+        <div class="card border-secondary mb-3" style="max-width: 800px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    {% if post.shoe_image %}
+                        <img src="{{ post.shoe_image.url }}" class="img-thumbnail" alt="Shoe'N picture of a shoe">
+                    {% endif %}
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="{% url 'article-detail' post.pk|slugify %}">{{ post.title }}</a></h5>
+                        <!-- <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a> -->
+                        <a>{{ post.category }}</a>
+                        <p class="card-text">{{ post.body|safe }}</p>
+                        <p class="card-text"><small class="text-muted">By: {{ post.author }} - {{ post.post_date }}        
+                        {% if user.is_authenticated %}
+                            {% if user.id == post.author.id %}
+                                <a href="{% url 'update_post' post.pk %}" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Edit</a>
+                                <a href="{% url 'delete_post' post.pk %}" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Delete</a>
+                            {% endif %}
+                        {% endif %}
+                        </small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+        </ul>
+</div>
+
+<style>
+body {
+    background: rgb(235, 235, 219, 1);
+}
+</style>
+            
+
+{% endblock %}
+<!-- Old set up before containers -->
+<!-- <ul>
+{% for post in object_list %}   
+    <li><a href="{% url 'article-detail' post.pk %}">
+        {{ post.title }}</a>
+        - <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a>
+        - {{ post.author }} - {{ post.post_date }} 
+        <small>
+        {% if user.is_authenticated %}
+            {% if user.id == post.author.id %}
+                <a href="{% url 'update_post' post.pk %}">(Edit)</a>
+                <a href="{% url 'delete_post' post.pk %}">(Delete)</a>
+            {% endif %}
+        {% endif %}
+        </small><br/>
+        {{ post.body|slice:":100"|safe }}
+    </li>
+{% endfor %}
+</ul> -->
+
