@@ -78,8 +78,8 @@ jobs:
         with:
             node-version: 20.x
   
-      - name: installing node_modules
-        run: npm install 
+      - name: 'Validate build'
+        run: |
 
       - uses: azure/docker-login@v1
         with:
@@ -99,9 +99,9 @@ jobs:
         with:
             node-version: 20.x
     
-      - name: installing node_modules
-        run: npm install 
-              
+      - name: 'Validate build'
+        run: |
+          
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
