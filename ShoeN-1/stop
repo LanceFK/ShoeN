@@ -1,0 +1,336 @@
+[33m5d2f8175[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m42971107[m file change
+[33m6553da27[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m9c4e0f4c[m added gitmodules2
+[33mdb68aef5[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33mebfed6a2[m added .gitmodules
+[33m55529e2d[m test2
+[33mc2026ac0[m removed file1
+[33m84e9a081[m removed file
+[33madee6e89[m testing3
+[33mb7e04f51[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m47e0c143[m testing2
+[33ma171e1a1[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33meb50137a[m testing
+[33mc6d914cb[m deleted files
+[33m9b45d255[m modified
+[33m47a1d6db[m new testing process1
+[33mce46ab76[m new packages added
+[33md68c1927[m updated new django packages
+[33m50c836c4[m new setup structure
+[33m296a2668[m New packages loaded python 312 update
+[33m67c11ab9[m added media folder to root path
+[33m59e7120b[m file change4
+[33mdccdf8c1[m file structure3
+[33m4a67085e[m file structure update1
+[33m4a9f29e1[m file structure update
+[33md5d3367b[m requirements.txt update to greenlet version
+[33m73fd3972[m yaml file update4
+[33m6f6de7f4[m yaml file updates3
+[33mb4d818db[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33md299d0a0[m yaml file updates
+[33m8ca5186c[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m50e2b0e4[m deleted files in file structure
+[33m30c2a919[m yaml file update1
+[33m66a09f87[m file change up
+[33m18482efa[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m778abb41[m test
+[33mc077a0e6[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33me47db6d8[m file test-1
+[33mb9c87261[m file test1
+[33m3e400ad4[m file change up
+[33mf2796f6d[m file setup-1.1
+[33m93e6474a[m file setup-1
+[33m390de498[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33md90c3b4a[m file setup1
+[33m55b89efa[m file updated
+[33mb08d1458[m testing-2
+[33ma2402fb6[m testing2
+[33mcd391eda[m testing
+[33mf88689c1[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33macf95bd6[m test2
+[33md8208faf[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m33c40b06[m test1
+[33m48d5d364[m test
+[33m728951e1[m file setup
+[33m6ec19bb3[m file stup
+[33m7b6c1604[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m0f0d6e18[m testing
+[33m813899f0[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m27a00cce[m testing1
+[33m8de3a434[m testing1
+[33mf4251115[m testing
+[33ma39ee7fd[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33mad893435[m file setup1
+[33mfc092a0a[m file stup1
+[33m21645e5d[m testing6
+[33m1e30b16b[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m125c2be0[m testing-5
+[33m19ebb867[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m84b7c192[m testing5
+[33m6d679ef5[m testing4
+[33mdc85ca5a[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m0c517e02[m Out of place folder2
+[33m2783a164[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m142cc0f6[m out of place folder
+[33me0aa3c43[m testing
+[33m41839d37[m testing
+[33mf3e06f27[m testing new desktop
+[33maa1bb2f4[m test
+[33m6f5c4df1[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33mec343577[m test2
+[33mb38f43e7[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m114be916[m test
+[33mb2107dac[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33ma62cdd56[m testing
+[33m46e6c493[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m0b94be91[m testing file structure6
+[33m005e5ad6[m Removed a file
+[33m56e58db3[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m02124b01[m testing file structer6
+[33m9541d7d5[m testing file structure5
+[33mc826ad59[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m47f4219b[m structure fule testing4
+[33m8dcd4733[m File structure testing3
+[33mc3c0c0bf[m Testing file structure2
+[33m73f631c4[m Testing new file structure1
+[33m4533c7aa[m Update file structure2
+[33me62e4b33[m New file structure. Need to create submodule to start tracking from this point.
+[33m7604a693[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m5ecdebc4[m file structure2
+[33mceab5502[m file structure
+[33m61fa258f[m file structure
+[33m69803361[m new structure
+[33m990d5aca[m New file structure2
+[33m1f24bf6c[m file structure1
+[33mad89e8d8[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m8d44e745[m old commits 2
+[33m4797b973[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33mfc10353f[m old commits
+[33mffb8b23a[m new desktop file structure
+[33m1f8d5496[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33mce3ce6b4[m new desktp cleanup 2
+[33m64d52479[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m1feeaea7[m new desktop cleanup
+[33m4cf9e185[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33mbd2bf626[m Dockerfile added
+[33mcd23285a[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33mcb51043f[m Added Dockerfile
+[33m32e5d49e[m ymal.file - added file
+[33m783be80c[m dsktp updating
+[33mba6e6432[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33me898fefa[m new desktp updating
+[33m8c2a018b[m new desktp updating
+[33m0cd016cd[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33mb098e69e[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m1cad953f[m new desktop
+[33mc051bcc0[m new desktop
+[33mcd551d0a[m Desktop setup
+[33m22587f4e[m New desktop setup.
+[33m9fdd6bc7[m Empty commit, transferring to new desktop
+[33mf7e189be[m Dockerfile update3
+[33m87225d8b[m Dockerfile update2
+[33m6aaf50e2[m Dockerfile update1
+[33mb522924d[m Dockerfile update3
+[33m5c76b04c[m Dockerfile update2
+[33mb218fa30[m Dockerfile update1
+[33m72f2ab37[m Dockerfile update5
+[33m08d7db0f[m Dockerfile update4
+[33m79803f80[m Dockerfile updtes to params and Entrypoint
+[33m6f7a0858[m Dockerfile updates to Entrypoint
+[33m98b95813[m Dockerfile update
+[33maf044dfd[m Dockerfile update on params
+[33mc5bd3902[m Dockerfile update
+[33ma71cf217[m Dockerfile update on params
+[33m45732d71[m Dockerfile /bin/bash added.
+[33me70ecd66[m Dockerfile update4
+[33mc946c531[m Dockerfile update3
+[33m24d3b5cc[m Dockerfile update2
+[33mce3d459f[m Dockerfile update
+[33m24b1183c[m Dockerfile update
+[33m62b4a65a[m Dockerfile - Error: Cannot find module '/src/server.js' removed the error line
+[33m9ae9344c[m deleted txt file.
+[33mbc329c44[m Dockerfile update to port 8080 node test 5
+[33m32965d29[m yaml.file update test 4
+[33m50e71a5c[m yaml.file update test 3
+[33m891e770a[m yaml.file update 2.
+[33m2d469b52[m yaml.file updates
+[33m6d1c9aaf[m Dockerfile - updted line 1
+[33m09eab45f[m Dockerfile testing13
+[33md7409fe3[m Dockerfile testing13
+[33mfd03082a[m Dockerfile testing12
+[33m605c4450[m Dockerfile testing11 added new params
+[33mff9e190b[m Dockerfile testing10
+[33m49e6f29c[m Dockerfile testing9
+[33mfe40d899[m Dockerfile testing8
+[33m259496eb[m Dockerfile testing7 added new params
+[33m8a61c156[m Dockerfile testing6
+[33m20888979[m Dockerfile testing5 added requrirements.txt to filestructure.
+[33mbb5187d2[m Dockerfile testing4 added copy line
+[33m315bf046[m Dockerfile testing3
+[33m24e3a4ed[m Dockerfile testing2 removed line 12 CMD.
+[33mef320a6c[m Dockerfile testing1 - added params
+[33mb3329447[m changes to the yaml.file for testing
+[33mff12c01c[m file changes
+[33m89dc2aab[m file changes
+[33m3f619aad[m Dockerfile  created testing parameters.
+[33mc86bfdfb[m yaml.file - updated line 96 with docker build instead of pull.
+[33mfeec405a[m yaml.file - updated line 96 and 97 with updated images.
+[33mf7333b05[m yaml.file -updated lines with push instead of pull images
+[33m4e4badc5[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m288db07d[m yam.file changes
+[33m3cb087da[m generated
+[33m012e988f[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33me001ef8c[m ymal.file update on version4 from 2
+[33m330b8db2[m generated
+[33m984c3765[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33mbc848246[m testing for removal of files in remote repo (removed)
+[33m3788c668[m test
+[33me12bcc7e[m generated
+[33m8ae582d0[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m1fe610f7[m yml.file line 21 updated to version4 instead of 2
+[33mc1a4891d[m generated
+[33m722a3d31[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33mb1cec718[m testing on the local repo
+[33m6024b476[m generated
+[33m09baca21[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m7429f4f6[m testing without remote repo
+[33ma4b20672[m test
+[33m04c2b507[m generated
+[33m28f00852[m testing local is behind remote
+[33mc082f171[m generated
+[33mf14251f8[m New commit after deleting remote repo
+[33m8cd89413[m test
+[33m2204a84a[m generated
+[33mdec391d7[m Attemp to commit without changes to the file.
+[33m7f349389[m generated
+[33m68f4ad5d[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m92981981[m testing7
+[33m7263fec2[m testing7
+[33mc032a5f9[m generated
+[33m6797318c[m Testing6
+[33m2832ff84[m Testing6
+[33mc1d8448f[m generated
+[33mc90e94ba[m Testing commit
+[33mebeab95b[m generated
+[33m4cfb2e08[m Running test.
+[33m70fc2f04[m Removed remote.repo as I do not have a team and will use the local repo
+[33m751aa353[m generated
+[33mfb885a03[m undue testing5 changes
+[33m5191dcab[m testing5 remote repo is ahead of local repo
+[33mc50de0a1[m testing on remote
+[33m915e2255[m generated
+[33m0c3ab980[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33ma7889da9[m remote commits, this remote is ahead of local repo
+[33mc73f8210[m undue testing4 lines.
+[33m5c02fa90[m testing4 - need to replace remote with local info.
+[33m4a1ead31[m testing changes
+[33me6fc20d6[m generated
+[33mdaa2ad55[m undue testing changes
+[33m28e76571[m testing - local repo behind remote o/m
+[33m624627f4[m testing 2
+[33m19c2e2cc[m testing
+[33mfbe2449b[m Local branc is ahead of remote.
+[33m18cf5896[m testing had to remove origin/master folder with 4 commits from Oct.
+[33m29e88b79[m generated
+[33mc0fc63c7[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m918db6ed[m settings file was updated for testing.
+[33m83e54844[m generated
+[33mdfa4eafd[m updated lines.
+[33m5fce1edc[m settings.py updated password for postgres.
+[33md28287ba[m did a remote pull from origin/master
+[33m07934017[m settings.py port 5432 was added.
+[33mcbc27b82[m generated
+[33m38f73d27[m settings.py - added port number to database info.
+[33mf8643aae[m Commits from shoen_app Fast-forward to master repo
+[33m945769ab[m From shoen_app repo 10k pull request were committed after build completed.
+[33ma9951a39[m generated
+[33mec1e6dc4[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m588745ae[m File setup - added requirements.txt to newProj folder.
+[33m00d96b07[m generated
+[33mfd4db4df[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m7e0b5431[m yaml.file changed node version from 2 to 3.
+[33m6311fdf8[m generated
+[33m9edc0e06[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33md46fde5d[m yaml.file removed line 32 cache npm received a lock file error.
+[33m64fd76c2[m generated
+[33m095112a2[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m4092ad92[m yaml.file added 32,33,34 cache npm.
+[33mf19e9e48[m generated
+[33md39e2870[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33me2c30710[m yaml.file changed line 37 cache to **/pyproject.toml.
+[33mac939034[m generated
+[33m9d9aeaeb[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33mdd7f3eb9[m yaml.file changed line 37 cache pip to **/requirements.txt path.
+[33m2a2aef14[m generated
+[33m23380999[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m33fa9cfd[m yml.file testing number 4.
+[33mebba1260[m yml.file testing 3
+[33m228db9a1[m generated
+[33m31913905[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m7b449ba9[m yml.file testing 2
+[33m614abe60[m yaml.file test 1
+[33m133113a5[m generated
+[33m4645d67e[m yml.file made changes to login server and docker info in secrets.
+[33m2689a16f[m settings.py file removed port number to empty string attempting python migrate processt to Microsoft.
+[33m9c1cee05[m yaml.file test 4
+[33me02d27cd[m yaml.file test 3 requirements.txt
+[33mb899bb2a[m yaml.file test 2 removed line 30
+[33m3b94b914[m yaml.file testing 1 with requirements.txt
+[33m2a511a52[m yaml.file removed cache pip line 30
+[33m969d97f5[m yaml.file updated Python version line 29 to 3.11 from 3.9
+[33m6e3e00b8[m yml.file added cache pip to line 30 based on github docs.
+[33m6d32b5c5[m yaml changes.
+[33mee4b2aaa[m Yaml file - updated environment webb app name
+[33mf118c3ec[m yaml file test
+[33m41c27d6c[m yaml file test
+[33m63f84bf9[m yaml file changes for testing
+[33m7ab822d6[m yaml changes
+[33m8a7c2398[m yaml file - added line 13 env
+[33m90cd759d[m yaml file- line 47 revised env path to venv istead antenv.
+[33m5fb72dfb[m yaml file- changed environment to venv instead of antenv.
+[33mde3034da[m yaml file- python version revised to 3.9 instead of 3.9.16.
+[33m996cc254[m yml file - added Docker login/password secrets in github.
+[33m6d9bdf87[m Updated line with node version 16
+[33mbf443910[m Added actions line setup nodev2
+[33m7ee451cc[m Cosmetic changes to create commit
+[33m44dc0e3a[m Minor cosmetic change to yml.file.
+[33mca485a08[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33mce2d8fa9[m Updated user full access to install requirements.txt file.
+[33m7bcd3abe[m Updated yml.file
+[33m4fbc2c5b[m UPdated line to remove push:
+[33md5729006[m Updated line with on: push added
+[33m171d0b60[m Updated pyhton versin 3.9 to 3.9.16
+[33mf88c4f1f[m Updated line with python/v1 to v2
+[33m30a7b87d[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33mc2e7c351[m Updated file for antenv
+[33m733c3925[m Update yml file
+[33m884acf36[m Updated shoe1in.yml file
+[33m7fc615a4[m Updated shoe1in.yml file
+[33m2c1f1d0a[m Updated master shoe1in.file
+[33m74d9cbb2[m Updated yml.file
+[33md808adad[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m5a6758b1[m Updated error lines on yml file
+[33m252cb995[m Updated master shoe1in.yml
+[33m8133fdb3[m Updated master shoe1in.yml
+[33mc8ae764a[m Updated master_shoe1in.yml file with acr info
+[33m2439aace[m ci:Yml file deleted uneccessary lines
+[33m1f88d2c6[m Merge branch 'master' of https://github.com/LanceFK/ShoeN
+[33m4d2d7380[m ci:Updated publish profile in master shoe1in.yml
+[33mc59aa20a[m Update master shoe1in.yml
+[33m8026b747[m Removed Disable static lines blocking github deployment
+[33m6ca70826[m Removed manage.py test
+[33mddcb1d92[m Removed manage.py collectstatic
+[33m95a3deae[m deployment failed due to no requirements.txt
+[33mcf248f60[m Initiate new build jobs and environment antenv
+[33mdcafe6d5[m Configured deployment source in app service to github repo
+[33m01879ab1[m Will start setup Create a local network gateway
+[33ma0a715b7[m Updated requirements.txt-Successful Deploy to github
+[33mcd4ee75d[m Add or update the Azure App Service build and deployment workflow config
+[33mf5f97a07[m Setup Azure service, App+data postgres
+[33ma1e53073[m Installed Azure Data Studio and Azure SQL Migration
+[33mfcba8969[m Created Microsoft Azure Database - Installed Azure Sandbox for resources - Continuing deployment process
+[33m3046922a[m Add or update the Azure App Service build and deployment workflow config
+[33mff8c429e[m Added some sttings.py Azure DB info- Working on errors
+[33m70b88b60[m Added some Microsoft Azure stuff
+[33md5e4011f[m Added ShoeN Source dropdown button for hangman and future projects to be stored - Added ShoeN3 button for future Metaverse projects
