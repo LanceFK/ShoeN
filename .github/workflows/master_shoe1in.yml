@@ -84,16 +84,12 @@ jobs:
       - uses: azure/docker-login@v1
         with:
           login-server: acrshoen.azurecr.io
-          username: ${{ secrets.ACR_USERNAME }}
-          password: ${{ secrets.ACR_PASSWORD }}
-      - uses: azure/docker-login@v1
-        with:
-          login-server: index.docker.io
-          username: ${{ secrets.DOCKERIO_USERNAME }}
-          password: ${{ secrets.DOCKERIO_PASSWORD }}
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+  
       - run: |
-          docker pull acrshoen.azurecr.io/shoe1in:d475216d72cf59359a8a7b884cc12f419dfa3cb3
-          docker pull shoe1in:d475216d72cf59359a8a7b884cc12f419dfa3cb3
+          docker build . -t acrshoen.azurecr.io/shoe1in:${{ github.sha }}  
+          docker push acrshoen.azurecr.io/shoe1in:${{ github.sha }}
 
       - uses: actions/setup-node@v4
         with:
